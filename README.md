@@ -1,81 +1,86 @@
 # Profilytic.com MVP Architecture
 
 ## Overview
-This section outlines the MVP architecture for Profilytic.com, focusing primarily on AI-driven resume and job description parsing.
+This README outlines the MVP (Model-View-Presenter) architecture for Profilytic.com, an AI-driven platform focusing on resume and job description parsing. The application leverages Next.js, Tailwind CSS for styling, Mongoose for MongoDB interactions, and Python for AI models, all containerized using Docker.
 
 ## MVP Architecture Components
 
-### AI-Driven Resume and Job Description Parsing
-- **Local AI Model / API Service (e.g., GPT-3, OpenAI, FastAPI)**
-  - Parse and extract key information from resumes and job descriptions.
-  - Analyze skills, experience, and qualifications.
+### Frontend (View)
+- **Next.js with Tailwind CSS**
+  - User Interface built with React and styled using Tailwind CSS.
+  - Pages:
+    - Home: `http://yourdomain.com/`
+    - Dashboard: `http://yourdomain.com/dashboard`
+    - Login: `http://yourdomain.com/login`
 
-### API Service for Developers
-- **API Endpoints (Node.js with FastAPI)**
-  - Provide essential API access for external developers.
-  - Implement basic token-based access control.
+### Backend (Presenter)
+- **Next.js API Routes**
+  - Serve as the Presenter in the MVP pattern, handling business logic.
+  - Endpoints:
+    - Authentication: `http://yourdomain.com/api/auth`
+    - Resume Parsing: `http://yourdomain.com/api/resume`
+- **Node.js with Mongoose**
+  - Server-side logic interacting with MongoDB.
+  - Model management and data processing.
+
+### AI-Driven Resume and Job Description Parsing (Model)
+- **Python AI Models (e.g., GPT-3, OpenAI)**
+  - Integrated within the backend for parsing and extracting key information.
+  - Communication with Node.js backend for data processing.
 
 ### Data Storage and Management
-- **Local MongoDB Database**
-  - Store and manage resume data and parsed results.
-
-### Application Backend
-- **Node.js (Backend Logic)**
-  - Manage application logic and API requests.
-  - Coordinate data flow between AI models and database.
+- **MongoDB Database**
+  - Hosted in a separate Docker container.
+  - Stores user data, resumes, and parsing results.
 
 ### Containerization and Deployment
 - **Docker and Docker Compose**
-  - Containerize the core components of the application.
-  - Simplify deployment and scaling on Digital Ocean.
+  - Two main containers: one for the Next.js application (including Node.js and Python) and another for MongoDB.
+  - Simplifies development, deployment, and scaling.
 
 ### Monitoring and Maintenance
-- **Basic Monitoring Tools**
-  - Monitor application performance and database health.
+- **Basic Monitoring Tools (e.g., Node.js monitoring tools)**
+  - Ensures application performance and database health.
 
 ## Conclusion
-The MVP of Profilytic.com provides a robust and efficient resume parsing API, ready for initial release and testing.
+The MVP architecture of Profilytic.com provides a robust foundation for an AI-driven resume parsing service, encapsulating frontend, backend, and AI functionalities within a scalable and maintainable framework.
 
+---
 
 # Profilytic.com Future Features
 
 ## Overview
-This section outlines the planned future features for Profilytic.com, enhancing its capabilities beyond the MVP.
+This section discusses the planned enhancements for Profilytic.com to extend its capabilities and user experience beyond the MVP phase.
 
 ## Planned Features
 
 ### Candidate Profile Analysis
-- **Data-Driven Analysis**
-  - Advanced functional analysis based on parsed data.
-  - Evaluate candidate profiles against diverse job criteria.
+- **Advanced Data Analysis**
+  - Leverage AI to analyze candidate profiles against diverse job criteria.
 
 ### Resume Filtering and Ranking
-- **Algorithmic Filtering**
-  - Sophisticated ranking of candidates based on job relevance.
-  - Automated shortlisting recommendations.
+- **Sophisticated Algorithms**
+  - Rank candidates based on job relevance and provide automated shortlisting.
 
-### Dashboard for Recruiters
-- **Web Application (React)**
-  - Comprehensive dashboard for recruiters.
-  - Interactive tools for candidate data visualization and job matching.
+### Interactive Dashboard for Recruiters
+- **React-based Web Application**
+  - Feature-rich dashboard with data visualization and candidate-job matching tools.
 
-### User Authentication
+### User Authentication System
 - **OAuth and Social Logins (Google, LinkedIn)**
-  - Enhanced user authentication and security.
+  - Secure and convenient user authentication.
 
-### Payment and Token System
-- **Payment Gateway Integration (e.g., Stripe, PayPal)**
-  - Advanced billing and subscription management for API access.
-  - Secure transaction handling.
+### Payment and Subscription Management
+- **Integration with Payment Gateways (Stripe, PayPal)**
+  - Manage API access billing and subscriptions securely.
 
-### Enhanced API Service
-- **Expanded API Functionality**
-  - Additional API features for external developers.
-  - Improved usage tracking and access control.
+### Enhanced API Services
+- **Expanded Functionality for Developers**
+  - Additional features, usage tracking, and improved access control.
 
-### Advanced Monitoring and Maintenance
-- **Enhanced Monitoring Tools (e.g., Grafana, Prometheus)**
-  - In-depth system health reporting and performance analytics.
+### Advanced Monitoring and Analytics
+- **Tools like Grafana and Prometheus**
+  - In-depth analytics for system health and performance.
 
 ## Conclusion
-These future features are aimed at making Profilytic.com a comprehensive solution in the field of AI-driven recruitment and candid
+These future developments aim to position Profilytic.com as a comprehensive AI-driven recruitment solution, enhancing both the recruiter and candidate experience.
