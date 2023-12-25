@@ -9,16 +9,16 @@ This README outlines the MVP (Model-View-Presenter) architecture for Profilytic.
 - **Next.js with Tailwind CSS**
   - User Interface built with React and styled using Tailwind CSS.
   - Pages:
-    - Home: `http://yourdomain.com/`
-    - Dashboard: `http://yourdomain.com/dashboard`
-    - Login: `http://yourdomain.com/login`
+    - Home: `http://profilytic.com/`
+    - Dashboard: `http://profilytic.com/dashboard`
+    - Login: `http://profilytic.com/login`
 
 ### Backend (Presenter)
 - **Next.js API Routes**
   - Serve as the Presenter in the MVP pattern, handling business logic.
   - Endpoints:
-    - Authentication: `http://yourdomain.com/api/auth`
-    - Resume Parsing: `http://yourdomain.com/api/resume`
+    - Authentication: `http://profilytic.com/api/auth`
+    - Resume Parsing: `http://profilytic.com/api/resume`
 - **Node.js with Mongoose**
   - Server-side logic interacting with MongoDB.
   - Model management and data processing.
