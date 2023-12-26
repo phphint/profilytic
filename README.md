@@ -12,6 +12,7 @@ This README outlines the MVP (Model-View-Presenter) architecture for Profilytic.
     - Home: `http://profilytic.com/`
     - Dashboard: `http://profilytic.com/dashboard`
     - Login: `http://profilytic.com/login`
+    - Join Waiting List: `http://profilytic.com/join-waiting-list`
 
 ### Backend (Presenter)
 - **Next.js API Routes**
@@ -19,6 +20,7 @@ This README outlines the MVP (Model-View-Presenter) architecture for Profilytic.
   - Endpoints:
     - Authentication: `http://profilytic.com/api/auth`
     - Resume Parsing: `http://profilytic.com/api/resume`
+    - Join Waiting List: `http://profilytic.com/api/join-waiting-list`
 - **Node.js with Mongoose**
   - Server-side logic interacting with MongoDB.
   - Model management and data processing.
@@ -26,6 +28,7 @@ This README outlines the MVP (Model-View-Presenter) architecture for Profilytic.
 ### AI-Driven Resume and Job Description Parsing (Model)
 - **Python AI Models (e.g., GPT-3, OpenAI)**
   - Integrated within the backend for parsing and extracting key information.
+  - Enables flexibility to switch to local AI models in the future.
   - Communication with Node.js backend for data processing.
 
 ### Data Storage and Management
@@ -71,8 +74,8 @@ This section discusses the planned enhancements for Profilytic.com to extend its
   - Secure and convenient user authentication.
 
 ### Payment and Subscription Management
-- **Integration with Payment Gateways (Stripe, PayPal)**
-  - Manage API access billing and subscriptions securely.
+- **Integration with Payment Gateway (Stripe)**
+  - Advanced billing and subscription management for API access.
 
 ### Enhanced API Services
 - **Expanded Functionality for Developers**
