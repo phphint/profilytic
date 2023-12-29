@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+  nextjs-app:
+    networks:
+      - proxy_app-network
+    build:
+      context: ./nextjs-app
+      dockerfile: Dockerfile
+    mem_limit: 512M
+    user: "1000:1000"
+    ports:
+      - "3004:3000"
+    volumes:
+      - ./nextjs-app:/app
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://mongo:27017/yourdbname
+      - LETSENCRYPT_HOST=profilytic.com
+      - LETSENCRYPT_EMAIL=jason@mavacode.com
+      - VIRTUAL_HOST=profilytic.com
+      - VIRTUAL_PORT=3000
+
+  mongodb:
+    networks:
+      - proxy_app-network
+    image: mongo:latest
+    mem_limit: 256M
+    ports:
+      - "27010:27017"
+    volumes:
+      - ./mongodb-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=rootuser
+      - MONGO_INITDB_ROOT_PASSWORD=rootpass
+
+networks:
+  proxy_app-network:
+    external: true
