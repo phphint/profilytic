@@ -1,0 +1,28 @@
+
+/* Resetting default browser styles */
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #313359;
+}
+.text-white {
+  color: #fefcff;
+}
+
+section.bg-white {
+  padding-top: 0;
+  margin-top: 0;
+}
+header {
+  margin-bottom: 0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section.gen-content {
+  margin-top: -2px; /* Adjust this value as needed */
+  border-top:1px sold #fff;
+}

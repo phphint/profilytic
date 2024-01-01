@@ -1,5 +1,7 @@
 import Head from 'next/head';
-import Layout from '../components/Layout';
+import LandingPageLayout from '../components/LandingPageLayout/LandingPageLayout';
+import ThreeColumnSection from '../components/ThreeColumnSection';
+import FourColumnSection from '../components/FourColumnSection';
 
 export default function Home() {
   return (
@@ -10,10 +12,10 @@ export default function Home() {
         <meta name="keywords" content="keyword1, keyword2, keyword3" />
         {/* Other meta tags */}
       </Head>
-      <Layout>
-        <h1>Welcome to the Home Page</h1>
-        {/* Other page content */}
-      </Layout>
+      <LandingPageLayout>
+      <ThreeColumnSection></ThreeColumnSection>
+      <FourColumnSection></FourColumnSection>
+      </LandingPageLayout>
     </>
   );
 }

@@ -11,11 +11,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "autoprefixer": "^10.4.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.303.0",
     "next": "^14.0.4",
+    "postcss": "^8.4.32",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.0",
@@ -24,10 +29,13 @@
   },
   "description": "",
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20.10.5",
     "@types/react": "^18.2.46",
     "@typescript-eslint/eslint-plugin": "^6.16.0",
     "@typescript-eslint/parser": "^6.16.0",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.8.5",
     "typescript": "^5.3.3"
   }
 }
