@@ -15,10 +15,13 @@ jobs:
     - name: Set up SSH
       run: |
         mkdir -p ~/.ssh/
-        echo "${{ secrets.ssh-rsa }}" > ~/.ssh/id_rsa
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan profilytic.com >> ~/.ssh/known_hosts
         chmod 644 ~/.ssh/known_hosts
+
+    - name: Test SSH Connection
+      run: ssh -T -v -o StrictHostKeyChecking=no root@profilytic.com
 
     - name: Execute deployment script on server
       run: ssh -o StrictHostKeyChecking=no root@profilytic.com '/home/profilytic/DeployCommit.sh'
