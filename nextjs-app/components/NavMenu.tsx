@@ -9,16 +9,14 @@ const NavMenu = () => {
         <div className="flex items-center">
           {/* Logo as a hyperlink using Link */}
           <Link href="/">
-            <a className="mr-10">
-              <img src={Logo} alt="Profilytic Logo" className="h-8" />
-            </a>
+            <img src={Logo} alt="Profilytic Logo" className="h-8 mr-10 cursor-pointer" />
           </Link>
         </div>
         <div className="flex items-center space-x-4">
-          <Link href="/"><a className="text-white hover:text-gray-300">Home</a></Link>
-          <Link href="/features"><a className="text-white hover:text-gray-300">Features</a></Link>
-          <Link href="/about"><a className="text-white hover:text-gray-300">About</a></Link>
-          <Link href="/login"><a className="text-white hover:text-gray-300">Login</a></Link>
+          <Link href="/"><span className="text-white hover:text-gray-300 cursor-pointer">Home</span></Link>
+          <Link href="/features"><span className="text-white hover:text-gray-300 cursor-pointer">Features</span></Link>
+          <Link href="/about"><span className="text-white hover:text-gray-300 cursor-pointer">About</span></Link>
+          <Link href="/login"><span className="text-white hover:text-gray-300 cursor-pointer">Login</span></Link>
 
           {/* Additional navigation items can be added here */}
         </div>
