@@ -7,9 +7,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Home Page - Your Site Name</title>
-        <meta name="description" content="Welcome to the Home Page of our website." />
-        <meta name="keywords" content="keyword1, keyword2, keyword3" />
+        <title>Profilytic - Revolutionizing Recruitment with AI-Driven Solutions</title>
+        <meta name="description" content="Profilytic offers advanced AI-driven recruitment solutions to empower talent acquisition and streamline the hiring process. Explore efficient analytics, data security, and customizable recruitment tools." />
+        <meta name="keywords" content="AI recruitment, talent acquisition, recruitment analytics, data security in recruitment, customizable recruitment tools, efficient hiring solutions" />
         {/* Other meta tags */}
       </Head>
       <LandingPageLayout>
