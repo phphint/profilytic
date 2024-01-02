@@ -17,7 +17,7 @@ RUN python3 -m venv /venv \
 
 # Copy Node.js package.json (and package-lock.json/yarn.lock) and install dependencies
 COPY package.json package-lock.json* yarn.lock* ./
-RUN npm install --production
+RUN npm install
 
 # Copy the rest of your app's source code from your host to your image filesystem.
 COPY . .
