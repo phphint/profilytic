@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";  // Import Link from next/link
+
 
 const Header = () => {
   return (
@@ -21,9 +23,11 @@ const Header = () => {
             Streamlining hiring with advanced technology.
           </p>{" "}
           {/* Brief Description */}
-          <button className="bg-[#0ec7c2] text-white py-2 px-4 rounded">
-            Learn More
-          </button>{" "}
+          <Link href="/features" passHref>
+            <button className="bg-[#0ec7c2] text-white py-2 px-4 rounded">
+              Explore Features
+            </button>
+          </Link>
           {/* Button */}
         </div>
 
