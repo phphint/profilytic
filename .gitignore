@@ -1,3 +1,8 @@
 mongodb-data/
 .DS_Store
 nextjs-app/.DS_Store
+nextjs-app/node_modules
+nextjs-app/.next
+nextjs-app/dist
+nextjs-app/logs
+nextjs-app/.cache
