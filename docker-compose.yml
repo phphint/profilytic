@@ -16,9 +16,9 @@ services:
     environment:
       - NODE_ENV=production
       - MONGODB_URI=mongodb://mongo:27017/yourdbname
-      - LETSENCRYPT_HOST=profilytic.com
+      - LETSENCRYPT_HOST=profilytic.com, www.profilytic.com
       - LETSENCRYPT_EMAIL=jason@mavacode.com
-      - VIRTUAL_HOST=profilytic.com
+      - VIRTUAL_HOST=profilytic.com, www.profilytic.com
       - VIRTUAL_PORT=3000
 
   mongodb:
