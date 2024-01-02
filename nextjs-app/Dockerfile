@@ -19,11 +19,14 @@ RUN python3 -m venv /venv \
 COPY package.json package-lock.json* yarn.lock* ./
 RUN npm install --production
 
+# Copy the rest of your app's source code from your host to your image filesystem.
+COPY . .
+
+# Build the Next.js app
+RUN npm run build
 
 # Expose the port the app runs on
 EXPOSE 3000
 
 # Run the app
-#CMD ["npm", "run", "start"]
 CMD ["npm", "run", "start"]
-
