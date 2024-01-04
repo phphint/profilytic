@@ -1,6 +1,7 @@
 import React from "react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBrain, faBalanceScale, faChartBar, faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faBrain } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -18,17 +19,18 @@ const Header = () => {
             Explore the advanced capabilities of Proflytic in streamlining the hiring process with cutting-edge AI technology.
           </p>
           <div className="flex items-center">
-            <button className="bg-e86aaa text-ebd0df py-2 px-4 rounded mr-4 flex items-center">
-              <FontAwesomeIcon icon={faBrain} className="mr-2" style={{ fontSize: '1em', color: '#23bab3' }} />
-              Explore Features
-            </button>
-            <button className="bg-1f8fc1 text-e7fdff py-2 px-4 rounded">
-              Our Technology
-            </button>
+            <Link href="/pricing" passHref>
+              <button className="bg-e86aaa text-ebd0df py-2 px-4 rounded mr-4 flex items-center">
+                <FontAwesomeIcon icon={faBrain} className="mr-2" style={{ fontSize: '1em', color: '#23bab3' }} />
+                Pricing
+              </button>
+            </Link>
+            <Link href="/features/our-technology" passHref>
+              <button className="bg-1f8fc1 text-e7fdff py-2 px-4 rounded">
+                Our Technology
+              </button>
+            </Link>
           </div>
-        </div>
-        <div className="w-1/2 flex flex-col justify-center items-end pr-10">
-        
         </div>
       </header>
     </>

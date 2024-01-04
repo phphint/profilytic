@@ -1,0 +1,22 @@
+// GeneralLayout.tsx
+import React from 'react';
+import Header from './HeaderOurTechnology';  // Adjust the import path as necessary
+import Footer from '../Footer';
+import NavBarGeneral from './NavbarGeneral';
+
+import Content from './ContentDarkBlue2';  // Import the new Content component
+
+const GeneralLayout = ({ children }) => {
+    return (
+        <div>
+       
+            <Header/> 
+            <Content>
+                {children} {/* This will be where the page content gets rendered */}
+            </Content>
+            <Footer />
+        </div>
+    );
+}
+
+export default GeneralLayout;
