@@ -15,7 +15,7 @@ export default function OurTechnology() {
         />
       </Head>
       <GeneralLayout>
-        <div className="container mx-auto p-0 shadow-lg mb-10">
+        <div className="container mx-auto p-0 shadow-lg mb-10 ">
           <div className="mx-auto p-0 text-dark bg-white font-thin">
             {/* Top row with three columns */}
             <div
@@ -90,95 +90,195 @@ export default function OurTechnology() {
             </div>
 
             {/* Bottom row with three columns */}
-            <div className="grid grid-cols-4 gap-4">
-         {/* Left column with customer testimonials */}
-<div className="col-span-1 p-10">
-  <div className="mb-6  ">
-    <p className="text-base font-light mb-2" style={{ color: '#090002' }}>
-      "Profilytic's AI-driven approach transformed our recruitment process. The accuracy in matching candidates to roles is outstanding. Highly recommended for any forward-thinking company!"
-    </p>
-    <div className="flex">
-      <span style={{ color: '#099fc4' }}>★★★★★</span>
-    </div>
-    <p className="text-sm mt-1">- Jordan Smith, HR Manager</p>
-  </div>
+            <div className="hidden md:grid md:grid-cols-4 gap-4 ">
+              {/* Left column with customer testimonials */}
+              <div className="col-span-1 p-10">
+                <div className="mb-6  ">
+                  <p
+                    className="text-base font-light mb-2"
+                    style={{ color: "#090002" }}
+                  >
+                    "Profilytic's AI-driven approach transformed our recruitment
+                    process. The accuracy in matching candidates to roles is
+                    outstanding. Highly recommended for any forward-thinking
+                    company!"
+                  </p>
+                  <div className="flex">
+                    <span style={{ color: "#099fc4" }}>★★★★★</span>
+                  </div>
+                  <p className="text-sm mt-1">- Jordan Smith, HR Manager</p>
+                </div>
 
-  <div className="mb-6  ">
-    <p className="text-base font-light mb-2" style={{ color: '#090002' }}>
-      "The intuitive design and powerful AI analytics of Profilytic have made our hiring process more efficient and effective. It's a game-changer for talent acquisition."
-    </p>
-    <div className="flex">
-      <span style={{ color: '#099fc4' }}>★★★★★</span>
-    </div>
-    <p className="text-sm mt-1">- Alex Johnson, Recruitment Lead</p>
-  </div>
-</div>
-
-
-              {/* Middle column with existing content */}
-              <div className="col-span-1 md:col-span-2 pt-5">
-              <table className="w-full text-left" style={{ backgroundColor: "#efefef" }}>
-  <tbody>
-    {/* First row */}
-    <tr>
-      {/* AI-Powered Candidate Matching */}
-      <td className="p-4" style={{ borderColor: "#fcfdfd", borderWidth: "1px", borderStyle: "solid" }}>
-        <h2 className="text-md font-semibold mb-2" style={{ color: "#4d9fa9" }}>
-          AI-Powered Candidate Matching
-        </h2>
-        <p className="text-base mb-3 font-light" style={{ color: "#a7a8a7" }}>
-          Profilytic leverages state-of-the-art AI technology to create a sophisticated candidate matching system. This approach analyzes vast amounts of data to identify candidates who not only have the required skills and experience but also fit the company culture and ethos. The AI algorithms are designed to learn and adapt, continuously improving the accuracy of candidate recommendations.
-        </p>
-      </td>
-
-      {/* Data Analytics Dashboard */}
-      <td className="p-4" style={{ borderColor: "#fcfdfd", borderWidth: "1px", borderStyle: "solid" }}>
-        <h2 className="text-md font-semibold mb-2" style={{ color: "#4d9fa9" }}>
-          Data Analytics Dashboard
-        </h2>
-        <p className="text-base mb-3 font-light" style={{ color: "#a7a8a7" }}>
-          The Profilytic Data Analytics Dashboard offers real-time insights into the recruitment process. It provides a comprehensive overview of hiring metrics, candidate tracking, and recruitment trends. This powerful tool allows companies to make data-driven decisions, optimize their recruitment strategies, and track the effectiveness of their hiring processes.
-        </p>
-      </td>
-    </tr>
-
-    {/* Second row */}
-    <tr>
-      {/* Security and Compliance */}
-      <td className="p-4" style={{ borderColor: "#fcfdfd", borderWidth: "1px", borderStyle: "solid" }}>
-        <h2 className="text-md font-semibold mb-2" style={{ color: "#4d9fa9" }}>
-          Security and Compliance
-        </h2>
-        <p className="text-base mb-3 font-light" style={{ color: "#a7a8a7" }}>
-          In an era of increasing digital threats, Profilytic places utmost importance on the security and privacy of data. Our platform adheres to stringent security protocols and complies with global data protection regulations. We ensure that all candidate and employer information is securely managed, maintaining confidentiality and integrity.
-        </p>
-      </td>
-
-      {/* Scalability */}
-      <td className="p-4" style={{ borderColor: "#fcfdfd", borderWidth: "1px", borderStyle: "solid" }}>
-        <h2 className="text-md font-semibold mb-2" style={{ color: "#4d9fa9" }}>
-          Scalability
-        </h2>
-        <p className="text-base mb-3 font-light" style={{ color: "#a7a8a7" }}>
-          Profilytic is designed with scalability in mind, capable of growing with your business. Whether you're a small startup or a large corporation, our platform can adapt to your changing needs. The flexible architecture allows for the seamless integration of new features and supports an increasing volume of data and users.
-        </p>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
+                <div className="mb-6  ">
+                  <p
+                    className="text-base font-light mb-2"
+                    style={{ color: "#090002" }}
+                  >
+                    "The intuitive design and powerful AI analytics of
+                    Profilytic have made our hiring process more efficient and
+                    effective. It's a game-changer for talent acquisition."
+                  </p>
+                  <div className="flex">
+                    <span style={{ color: "#099fc4" }}>★★★★★</span>
+                  </div>
+                  <p className="text-sm mt-1">
+                    - Alex Johnson, Recruitment Lead
+                  </p>
+                </div>
               </div>
 
-       {/* Right column with production content */}
- 
-<div className="col-span-1 text-center pt-14 p-10">
-  <h2 className="text-xl font-semibold mb-5 pt-10" style={{ color: '#099fc4' }}>Revolutionizing Recruitment with AI</h2>
-  <p className="font-light" style={{ color: '#090002' }}>
-  Profilytic redefines recruitment by harnessing AI to accurately parse resumes and job descriptions, ensuring precise candidate-job alignment. Our advanced algorithms delve beyond keywords to match the intricacies of candidate profiles and job roles. This innovation leads the way in efficient, fair, and insightful recruitment, shaping a future where talent meets opportunity with precision.
-  </p>
-</div>
+              {/* Middle column with existing content */}
+              <div className="col-span-1 md:col-span-2 pt-5 ">
+                <table
+                  className="w-full text-left"
+                  style={{ backgroundColor: "#efefef" }}
+                >
+                  <tbody>
+                    {/* First row */}
+                    <tr>
+                      {/* AI-Powered Candidate Matching */}
+                      <td
+                        className="p-4"
+                        style={{
+                          borderColor: "#fcfdfd",
+                          borderWidth: "1px",
+                          borderStyle: "solid",
+                        }}
+                      >
+                        <h2
+                          className="text-md font-semibold mb-2"
+                          style={{ color: "#4d9fa9" }}
+                        >
+                          AI-Powered Candidate Matching
+                        </h2>
+                        <p
+                          className="text-base mb-3 font-light"
+                          style={{ color: "#a7a8a7" }}
+                        >
+                          Profilytic leverages state-of-the-art AI technology to
+                          create a sophisticated candidate matching system. This
+                          approach analyzes vast amounts of data to identify
+                          candidates who not only have the required skills and
+                          experience but also fit the company culture and ethos.
+                          The AI algorithms are designed to learn and adapt,
+                          continuously improving the accuracy of candidate
+                          recommendations.
+                        </p>
+                      </td>
 
+                      {/* Data Analytics Dashboard */}
+                      <td
+                        className="p-4"
+                        style={{
+                          borderColor: "#fcfdfd",
+                          borderWidth: "1px",
+                          borderStyle: "solid",
+                        }}
+                      >
+                        <h2
+                          className="text-md font-semibold mb-2"
+                          style={{ color: "#4d9fa9" }}
+                        >
+                          Data Analytics Dashboard
+                        </h2>
+                        <p
+                          className="text-base mb-3 font-light"
+                          style={{ color: "#a7a8a7" }}
+                        >
+                          The Profilytic Data Analytics Dashboard offers
+                          real-time insights into the recruitment process. It
+                          provides a comprehensive overview of hiring metrics,
+                          candidate tracking, and recruitment trends. This
+                          powerful tool allows companies to make data-driven
+                          decisions, optimize their recruitment strategies, and
+                          track the effectiveness of their hiring processes.
+                        </p>
+                      </td>
+                    </tr>
 
+                    {/* Second row */}
+                    <tr>
+                      {/* Security and Compliance */}
+                      <td
+                        className="p-4"
+                        style={{
+                          borderColor: "#fcfdfd",
+                          borderWidth: "1px",
+                          borderStyle: "solid",
+                        }}
+                      >
+                        <h2
+                          className="text-md font-semibold mb-2"
+                          style={{ color: "#4d9fa9" }}
+                        >
+                          Security and Compliance
+                        </h2>
+                        <p
+                          className="text-base mb-3 font-light"
+                          style={{ color: "#a7a8a7" }}
+                        >
+                          In an era of increasing digital threats, Profilytic
+                          places utmost importance on the security and privacy
+                          of data. Our platform adheres to stringent security
+                          protocols and complies with global data protection
+                          regulations. We ensure that all candidate and employer
+                          information is securely managed, maintaining
+                          confidentiality and integrity.
+                        </p>
+                      </td>
+
+                      {/* Scalability */}
+                      <td
+                        className="p-4"
+                        style={{
+                          borderColor: "#fcfdfd",
+                          borderWidth: "1px",
+                          borderStyle: "solid",
+                        }}
+                      >
+                        <h2
+                          className="text-md font-semibold mb-2"
+                          style={{ color: "#4d9fa9" }}
+                        >
+                          Scalability
+                        </h2>
+                        <p
+                          className="text-base mb-3 font-light"
+                          style={{ color: "#a7a8a7" }}
+                        >
+                          Profilytic is designed with scalability in mind,
+                          capable of growing with your business. Whether you're
+                          a small startup or a large corporation, our platform
+                          can adapt to your changing needs. The flexible
+                          architecture allows for the seamless integration of
+                          new features and supports an increasing volume of data
+                          and users.
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Right column with production content */}
+
+              <div className="col-span-1 text-center pt-14 p-10">
+                <h2
+                  className="text-xl font-semibold mb-5 pt-10"
+                  style={{ color: "#099fc4" }}
+                >
+                  Revolutionizing Recruitment with AI
+                </h2>
+                <p className="font-light" style={{ color: "#090002" }}>
+                  Profilytic redefines recruitment by harnessing AI to
+                  accurately parse resumes and job descriptions, ensuring
+                  precise candidate-job alignment. Our advanced algorithms delve
+                  beyond keywords to match the intricacies of candidate profiles
+                  and job roles. This innovation leads the way in efficient,
+                  fair, and insightful recruitment, shaping a future where
+                  talent meets opportunity with precision.
+                </p>
+              </div>
             </div>
           </div>
         </div>

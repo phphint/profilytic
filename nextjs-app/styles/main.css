@@ -26,3 +26,39 @@ section.gen-content {
   margin-top: -2px; /* Adjust this value as needed */
   border-top:1px sold #fff;
 }
+
+/* Style for the Drawer */
+.MuiDrawer-paper {
+  background-color: #35345c; /* Drawer background color */
+  color: white; /* Text color for the Drawer */
+}
+
+/* Style for the menu items in the Drawer */
+.MuiDrawer-paper a {
+  display: block; /* Make each link take the full width of the Drawer */
+  padding: 12px 16px; /* Add some padding to each link for better touch targets */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Hover and focus styles for the menu items */
+.MuiDrawer-paper a:hover, .MuiDrawer-paper a:focus {
+  background-color: #40454f; /* Slightly lighter color on hover/focus */
+  text-decoration: none; /* Ensure no underline appears on hover/focus */
+}
+
+/* Style for the active menu item */
+.MuiDrawer-paper a span.underline {
+  text-decoration: underline; /* Underline for the active menu item */
+}
+@media (max-width: 768px) {
+  .features-banner {
+    background-position: left bottom !important;
+  }
+}
+@media (min-width: 1280px) {
+  .features-banner {
+    background-position: left top !important;
+    min-height: 66vh; /* 66% of the viewport height */
+
+  }
+}

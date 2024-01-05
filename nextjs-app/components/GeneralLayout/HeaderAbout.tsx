@@ -1,6 +1,5 @@
 import React from "react";
-import Link from "next/link";  // Import Link from next/link
-
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -10,33 +9,30 @@ const Header = () => {
         style={{ backgroundImage: "url('/media/about-header.png')" }}
       >
         <div className="container mx-auto flex flex-col justify-center items-center h-full px-4 py-8 text-center">
-          {/* Content centered */}
-          <h1 className="text-6xl font-semibold mb-2 w-1/3">
+          <h1 className="text-3xl md:text-6xl font-semibold mb-2 md:mb-2">
             About Proflytic
-          </h1>{" "}
-          {/* Main Title */}
-          <h2 className="text-xl mb-4 w-1/3">
+          </h1>
+          <h2 className="text-lg md:text-xl mb-4">
             AI-Driven Recruitment, Redefined
-          </h2>{" "}
-          {/* Subtitle */}
-          <p className="mb-4 w-1/3 font-thin">
+          </h2>
+          <p className="mb-4 font-thin text-sm md:text-base">
             Streamlining hiring with advanced technology.
-          </p>{" "}
-          {/* Brief Description */}
+          </p>
           <Link href="/features" passHref>
-            <button className="bg-[#0ec7c2] text-white py-2 px-4 rounded">
+            <button className="bg-[#0ec7c2] text-white py-2 px-4 rounded text-sm md:text-base">
               Explore Features
             </button>
           </Link>
-          {/* Button */}
         </div>
 
-        <div className="container mx-auto p-4">
-          <div className="shadow-2xl rounded-lg overflow-hidden w-3/4 mx-auto ">
-            <div className="flex">
-              {/* Left Column */}
+        <div className="container mx-auto px-4 py-4 md:p-4">
+          <div className="shadow-2xl rounded-lg overflow-hidden mx-auto ">
+            <div className="flex flex-col md:flex-row">
+              <div className="w-full md:w-1/2 bg-[#292e4e] text-white p-4">
+                {/* Content for the left column */}
+                        {/* Left Column */}
 
-              <div className="w-1/2 bg-[#292e4e] text-white p-4">
+     
   <div className="grid grid-cols-2 gap-4">
     {/* Row 1 */}
     <div className="border-r border-[#393858] pr-4">
@@ -93,11 +89,11 @@ const Header = () => {
       <p className="font-thin">Up-to-date data insights for informed decision-making.</p>
     </div>
   </div>
-</div>
+ 
 
-
-              {/* Right Column */}
-              <div className="w-1/2 bg-white p-4">
+              </div>
+              <div className="w-full md:w-1/2 bg-white p-4">
+                {/* Content for the right column */}
                 <h1 className="text-xl font-bold mb-4 text-proflytic-primary">
                   Our Story
                 </h1>
@@ -128,7 +124,6 @@ const Header = () => {
                   to make recruitment a seamless, transparent journey for all
                   involved - companies, recruiters, and job seekers alike.
                 </p>
-                {/* ... Rest of the existing content */}
               </div>
             </div>
           </div>

@@ -1,12 +1,10 @@
-// GeneralLayout.tsx
 import React from "react";
 import Header from "./AuthBackground"; // Adjust the import path as necessary
 
- 
-const GeneralLayout = ({ children }) => {
+const GeneralLayout = ({ children, backgroundImage }) => {
   return (
     <div>
-      <Header>{children}</Header>
+      <Header backgroundImage={backgroundImage}>{children}</Header>
     </div>
   );
 };
