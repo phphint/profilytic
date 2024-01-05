@@ -3,7 +3,7 @@ import NavMenu from '../NavMenu'; // Adjust the path according to your directory
 
 const Navbar = () => {
   return (
-    <section className="bg-[#35345c] text-white w-full">
+    <section className="bg-[#35345c] text-white w-full nav-general">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         <NavMenu />
 
