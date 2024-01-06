@@ -9,8 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
-import Link from 'next/link';
-
+import Link from "next/link";
 
 import Navbar from "./Navbar"; // Adjust the path as necessary
 
@@ -33,31 +32,33 @@ const Banner = () => {
             Discover the power of intelligent resume parsing and data-driven
             candidate evaluation.
           </p>
-     {/* Learn More Link */}
-     <Link href="/features/our-technology" legacyBehavior>
-          <a className="text-[#4dedfd] mb-8 inline-flex items-center pb-14">
-            Learn More
-            <FontAwesomeIcon
-              icon={faAngleDoubleRight}
-             
-              className="ml-2"
-            />
-          </a>
-        </Link>
-
+          {/* Learn More Link */}
+          <Link href="/features/our-technology" legacyBehavior>
+            <a className="text-[#4dedfd] mb-8 inline-flex items-center pb-14">
+              Learn More
+              <FontAwesomeIcon
+                icon={faAngleDoubleRight}
+                width="1em"
+                height="1em"
+                className="ml-2"
+              />
+            </a>
+          </Link>
         </div>
-     
+
         {/* ... Existing content ... */}
 
         <div className="hidden md:flex justify-around pb-14">
           {/*   Icons Sections */}
- 
-           <div className="text-center pl-5 pr-5">
+
+          <div className="text-center pl-5 pr-5">
             <div className="flex justify-center">
               <FontAwesomeIcon
                 icon={faChartLine}
                 size="4x"
                 className="text-[#4dedfd]"
+                width="4rem"
+                height="4rem"
               />
             </div>
             <h3 className="text-xl font-semibold text-white mt-5 mb-3">
@@ -72,7 +73,8 @@ const Banner = () => {
               <FontAwesomeIcon
                 icon={faLock}
                 size="4x"
-                
+                width="4rem"
+                height="4rem"
                 className="text-[#4dedfd]"
               />
             </div>
@@ -88,6 +90,8 @@ const Banner = () => {
               <FontAwesomeIcon
                 icon={faCreditCard}
                 size="4x"
+                width="4rem"
+                height="4rem"
                 className="text-[#4dedfd]"
               />
             </div>
@@ -104,6 +108,8 @@ const Banner = () => {
                 icon={faTools}
                 size="4x"
                 className="text-[#4dedfd]"
+                width="4rem"
+                height="4rem"
               />
             </div>
             <h3 className="text-xl font-semibold text-white mt-5 mb-3">

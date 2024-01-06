@@ -23,15 +23,9 @@ const NavMenu = () => {
   return (
     <nav className="bg-[#35345c]">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-        {/* Logo */}
-        <div className="flex items-center">
-          <Link href="/">
-            <img src={Logo} alt="Profilytic Logo" className="h-8 mr-10 cursor-pointer" />
-          </Link>
-        </div>
 
-        {/* Hamburger Icon for Mobile */}
-        <IconButton
+              {/* Hamburger Icon for Mobile */}
+              <IconButton
           edge="start"
           color="inherit"
           aria-label="menu"
@@ -40,6 +34,14 @@ const NavMenu = () => {
         >
           <MenuIcon />
         </IconButton>
+        {/* Logo */}
+        <div className="flex items-center">
+          <Link href="/">
+            <img src={Logo} alt="Profilytic Logo" className="h-8 mr-10 cursor-pointer" />
+          </Link>
+        </div>
+
+  
 
         {/* Drawer for Mobile Menu */}
         <Drawer anchor="left" open={isDrawerOpen} onClose={toggleDrawer(false)}>
@@ -70,6 +72,8 @@ const NavMenu = () => {
           <Link href="/login"><span className={`text-white hover:text-gray-300 cursor-pointer ${isActive('/login') ? 'underline' : ''}`}>Login</span></Link>
       
         </div>
+
+        
       </div>
     </nav>
   );

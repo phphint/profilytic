@@ -13,16 +13,25 @@ const ThreeColumnSection = () => {
           <div className="w-full md:w-1/3 px-2 mb-6 md:mb-0 md:pl-10 md:pr-10">
             <h2 className="text-xl font-bold mb-4">Our Approach</h2>
             <ul className="list-none w-full">
-              <li className="flex items-center w-full shadow-lg mb-2 p-4 font-light">
-                <FontAwesomeIcon icon={faUserTie} className="mr-2 text-button-color" />
+              <li className="flex  w-full shadow-lg mb-2 p-4 font-light">
+                <FontAwesomeIcon 
+                    width="2rem"
+                    height="auto"
+                icon={faUserTie} className="mr-2 text-button-color" />
                 Personalized Candidate Matching
               </li>
-              <li className="flex items-center w-full shadow-lg mb-2 p-4 font-light">
-                <FontAwesomeIcon icon={faCogs} className="mr-2 text-button-color" />
+              <li className="flex  w-full shadow-lg mb-2 p-4 font-light">
+                <FontAwesomeIcon 
+                    width="2rem"
+                    height="auto"
+                icon={faCogs} className="mr-2 text-button-color" />
                 Automated Screening Process
               </li>
-              <li className="flex items-center w-full shadow-lg mb-2 p-4 font-light">
-                <FontAwesomeIcon icon={faChartBar} className="mr-2 text-button-color" />
+              <li className="flex  w-full shadow-lg mb-2 p-4 font-light">
+                <FontAwesomeIcon 
+                  width="2rem"
+                  height="auto"
+                icon={faChartBar} className="mr-2 text-button-color" />
                 Real-time Analytics & Reporting
               </li>
               {/* Add more list items as needed */}

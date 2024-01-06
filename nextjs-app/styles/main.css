@@ -29,8 +29,8 @@ section.gen-content {
 
 /* Style for the Drawer */
 .MuiDrawer-paper {
-  background-color: #35345c; /* Drawer background color */
-  color: white; /* Text color for the Drawer */
+  background-color: #35345c !important; /* Drawer background color */
+  color: white !important; /* Text color for the Drawer */
 }
 
 /* Style for the menu items in the Drawer */
@@ -42,8 +42,8 @@ section.gen-content {
 
 /* Hover and focus styles for the menu items */
 .MuiDrawer-paper a:hover, .MuiDrawer-paper a:focus {
-  background-color: #40454f; /* Slightly lighter color on hover/focus */
-  text-decoration: none; /* Ensure no underline appears on hover/focus */
+  background-color: #40454f !important; /* Slightly lighter color on hover/focus */
+  text-decoration: none !important; /* Ensure no underline appears on hover/focus */
 }
 
 /* Style for the active menu item */
@@ -65,5 +65,17 @@ section.gen-content {
 
 
 
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-colorInherit.MuiIconButton-edgeStart.MuiIconButton-sizeMedium {
+  color: white !important; /* This will change the color of the icon to white */
+}
 
+.MuiButtonBase-root.MuiIconButton-root {
+  display: none !important; /* Hide by default */
+}
+
+@media screen and (max-width: 767px) {
+  .MuiButtonBase-root.MuiIconButton-root {
+      display: block !important; /* Show on mobile screens */
+  }
+}
 
