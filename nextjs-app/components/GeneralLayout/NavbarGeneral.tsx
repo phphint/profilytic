@@ -7,8 +7,8 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         <NavMenu />
 
-        {/* Button aligned to the right */}
-        <button className="bg-[#504a7a] text-[#bfbfc7] py-2 px-4 rounded">
+        {/* Button hidden on mobile and tablet, visible on medium screens and above */}
+        <button className="hidden md:flex bg-[#504a7a] text-[#bfbfc7] py-2 px-4 rounded">
           Sign-up  
         </button>
         

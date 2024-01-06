@@ -7,7 +7,8 @@ import Link from "next/link";
 const Header = () => {
   return (
     <header
-      className="bg-cover bg-bottom min-h-[44vh] mb-0 bg-white border-b border-white"
+    className="hidden md:block bg-cover bg-bottom min-h-[44vh] mb-0 bg-white border-b border-white"
+
       style={{ backgroundImage: "url('/media/header.png')" }}
     >
       <div className="container mx-auto flex justify-between items-center h-full px-4 py-8">

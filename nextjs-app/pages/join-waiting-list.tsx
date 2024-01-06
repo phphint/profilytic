@@ -14,15 +14,15 @@ export default function JoinWaitingList() {
         <div className="container mx-auto p-4 flex justify-center flex-col items-center">
 
           {/* Heading and Description */}
-          <div className=" mb-8">
-            <h2 className="text-3xl text-white font-bold mb-4">Join Our Waiting List</h2>
-            <p className="text-white">
-              Be among the first to experience Proflytic. Sign up for our waiting list to get early access and stay informed about our latest features and updates.
-            </p>
-          </div>
+        
+           
 
           {/* Form Section */}
           <form className="w-full max-w-sm">
+          <h2 className="text-3xl text-white font-bold mb-4">Join Our Waiting List</h2>
+            <p className="text-white mb-10">
+              Be among the first to experience Proflytic. Sign up for our waiting list to get early access and stay informed about our latest features and updates.
+            </p>
             {/* Email Field */}
             <div className="mb-6">
               <label htmlFor="email" className="block text-white text-sm font-bold mb-2">

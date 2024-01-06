@@ -18,6 +18,9 @@ const PricePlanSection = () => {
       <ul className="mt-5">
         <li className="flex items-center mb-2">
           <FontAwesomeIcon
+          width='2rem'
+          height='2rem'
+          size='2x'
             icon={faCheckCircle}
             className="mr-2 text-27c2d4"
           />
@@ -25,6 +28,9 @@ const PricePlanSection = () => {
         </li>
         <li className="flex items-center mb-2">
           <FontAwesomeIcon
+             width='2rem'
+             height='2rem'
+             size='2x'
             icon={faCheckCircle}
             className="mr-2 text-27c2d4"
           />
@@ -32,6 +38,9 @@ const PricePlanSection = () => {
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
+             width='2rem'
+             height='2rem'
+             size='2x'
             icon={faCheckCircle}
             className="mr-2 text-27c2d4"
           />
