@@ -18,21 +18,21 @@ const ThreeColumnSection = () => {
                     width="2rem"
                     height="auto"
                 icon={faUserTie} className="mr-2 text-button-color" />
-                Personalized Candidate Matching
+                AI ScoreMatch redefines resume analysis with holistic candidate evaluations.
               </li>
               <li className="flex  w-full shadow-lg mb-2 p-4 font-light">
                 <FontAwesomeIcon 
                     width="2rem"
                     height="auto"
                 icon={faCogs} className="mr-2 text-button-color" />
-                Automated Screening Process
+                Advanced AI-driven candidate screening for precise role-candidate matching.
               </li>
               <li className="flex  w-full shadow-lg mb-2 p-4 font-light">
                 <FontAwesomeIcon 
                   width="2rem"
                   height="auto"
                 icon={faChartBar} className="mr-2 text-button-color" />
-                Real-time Analytics & Reporting
+                In-depth AI Analytics & Reporting for comprehensive candidate insights.
               </li>
               {/* Add more list items as needed */}
             </ul>
@@ -55,7 +55,7 @@ const ThreeColumnSection = () => {
               </a>
             </Link>
             <p className="mt-2 mb-4 font-thin">
-              Join countless businesses already benefiting from our technology in streamlining their hiring processes.
+            Discover how our technology can revolutionize your hiring process.
             </p>
           </div>
 

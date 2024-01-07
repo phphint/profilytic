@@ -6,66 +6,34 @@ const PricingBenefitsSection = () => {
       </h3>
 
       <div className="container mx-auto px-4">
-        {/* Row 1 */}
+        {/* Row */}
         <div className="flex flex-col md:flex-row justify-around mb-5">
           {/* Column 1 */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Cost-Effective Solutions</h4>
-              <p className="font-thin">Get the best value for your recruitment budget.</p>
+              <p className="font-thin">Maximize your recruitment budget with our token-based pricing.</p>
             </div>
           </div>
           {/* Column 2 */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Risk-Free Trial</h4>
-              <p className="font-thin">Explore our features with a complimentary trial period.</p>
+              <h4 className="font-semibold text-xl mb-3">Complimentary Tokens</h4>
+              <p className="font-thin">Start with 10 free tokens to explore our platform.</p>
             </div>
           </div>
           {/* Column 3 */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Adaptable Plans</h4>
-              <p className="font-thin">Choose a plan that scales with your business growth.</p>
+              <h4 className="font-semibold text-xl mb-3">Bulk Token Discounts</h4>
+              <p className="font-thin">Enjoy a 20% discount on bulk token purchases.</p>
             </div>
           </div>
           {/* Column 4 */}
           <div className="md:flex-1 p-2.5">
             <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Transparent Pricing</h4>
-              <p className="font-thin">Clear and straightforward pricing, with no hidden costs.</p>
-            </div>
-          </div>
-        </div>
-
-        {/* Row 2 */}
-        <div className="flex flex-col md:flex-row justify-around">
-          {/* Column 1 */}
-          <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
-            <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Effortless Upgrades</h4>
-              <p className="font-thin">Upgrade your plan effortlessly as your hiring needs evolve.</p>
-            </div>
-          </div>
-          {/* Column 2 */}
-          <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
-            <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Streamlined Bulk Hiring</h4>
-              <p className="font-thin">Efficiently manage high-volume recruitment needs.</p>
-            </div>
-          </div>
-          {/* Column 3 */}
-          <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
-            <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Data-Driven Insights</h4>
-              <p className="font-thin">Make informed hiring decisions with powerful analytics.</p>
-            </div>
-          </div>
-          {/* Column 4 */}
-          <div className="md:flex-1 p-2.5">
-            <div className="bg-[#1a222d] p-10 ">
-              <h4 className="font-semibold text-xl mb-3">User-Friendly Design</h4>
-              <p className="font-thin">Enjoy an intuitive platform that simplifies recruitment.</p>
+              <h4 className="font-semibold text-xl mb-3">Transparent Token Pricing</h4>
+              <p className="font-thin">No hidden costs, pay for what you need.</p>
             </div>
           </div>
         </div>

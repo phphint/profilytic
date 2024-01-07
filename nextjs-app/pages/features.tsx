@@ -21,33 +21,37 @@ export default function Features() {
     <div className="flex flex-col md:flex-row">
       {/* Left Column */}
       <div className="md:w-1/2 flex flex-wrap">
-        {/* Feature 1 */}
-        <div className="w-full md:w-1/2 p-2">
-          <h3 className="text-lg font-bold text-title-color">AI-Powered Matching</h3>
-          <h4 className="text-md font-semibold text-subtitle-color">Precision in Candidate Selection</h4>
-          <p className="text-description-color">
-            Leveraging advanced algorithms to ensure the most accurate match between job requirements and candidate profiles.
-          </p>
-          <div className="border-b border-5c8c80 my-2"></div>
-        </div>
-        {/* Feature 2 */}
-        <div className="w-full md:w-1/2 p-2">
-          <h3 className="text-lg font-bold text-title-color">Automated Screening</h3>
-          <h4 className="text-md font-semibold text-subtitle-color">Efficient Candidate Filtering</h4>
-          <p className="text-description-color">
-            Streamlining the initial stages of hiring by automating the candidate screening process, saving time and resources.
-          </p>
-          <div className="border-b border-5c8c80 my-2"></div>
-        </div>
-        {/* Feature 3 */}
-        <div className="w-full md:w-1/2 p-2">
-          <h3 className="text-lg font-bold text-title-color">Real-time Analytics & Reporting</h3>
-          <h4 className="text-md font-semibold text-subtitle-color">Actionable Recruitment Insights</h4>
-          <p className="text-description-color">
-            Access comprehensive analytics and reports in real-time, enabling data-driven decision-making in your recruitment process.
-          </p>
-          <div className="border-b border-5c8c80 my-2"></div>
-        </div>
+ {/* Feature 1 */}
+<div className="w-full md:w-1/2 p-2">
+  <h3 className="text-lg font-bold text-title-color">AI-Powered Matching</h3>
+  <h4 className="text-md font-semibold text-subtitle-color">Hyper-Intelligent Candidate Analysis</h4>
+  <p className="text-description-color">
+    Our AI-driven system delves deeply into candidate qualifications, making hyper-intelligent assessments to align perfectly with job requirements. Experience the future of precision in candidate selection.
+  </p>
+  <div className="border-b border-5c8c80 my-2"></div>
+</div>
+
+{/* Feature 2 */}
+<div className="w-full md:w-1/2 p-2">
+  <h3 className="text-lg font-bold text-title-color">Automated Screening</h3>
+  <h4 className="text-md font-semibold text-subtitle-color">Efficient Candidate Filtering</h4>
+  <p className="text-description-color">
+    Enhance hiring efficiency with our AI-driven screening, swiftly identifying the most suitable candidates and optimizing your recruitment process.
+  </p>
+  <div className="border-b border-5c8c80 my-2"></div>
+</div>
+
+
+   {/* Feature 3 */}
+<div className="w-full md:w-1/2 p-2">
+  <h3 className="text-lg font-bold text-title-color">Comprehensive Candidate Analysis</h3>
+  <h4 className="text-md font-semibold text-subtitle-color">In-Depth Recruitment Insights</h4>
+  <p className="text-description-color">
+    Gain detailed insights from batch-processed analytics, providing thorough candidate evaluations to inform strategic hiring decisions.
+  </p>
+  <div className="border-b border-5c8c80 my-2"></div>
+</div>
+
         {/* Feature 4 */}
         <div className="w-full md:w-1/2 p-2">
           <h3 className="text-lg font-bold text-title-color">Scalable Infrastructure</h3>

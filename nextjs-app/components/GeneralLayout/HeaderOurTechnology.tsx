@@ -23,10 +23,10 @@ const Header = () => {
                 Redefining talent acquisition with advanced AI technology.
               </p>
               <h2 className="text-xl font-light text-fffefa mb-7">
-                Advanced Candidate Screening
+                Advanced AI Candidate Screening
               </h2>
               <p className="text-sm text-ded7df font-light">
-                Profilytic's AI algorithms offer precise, efficient candidate evaluation, tailored to role-specific needs.
+              Profilytic's AI system provides precise and efficient candidate evaluation, automatically adapting to align with the unique requirements of each role.
               </p>
             </div>
           </div>

@@ -25,7 +25,7 @@ module.exports = {
         'proflytic-primary': '#3b3f6c',
         'proflytic-secondary': '#1b1f22',
         'title-color': '#feffff',  // Your title color
-        'subtitle-color': '#732d51', // Your subtitle color
+        'subtitle-color': '#b24a7f', // Your subtitle color
         'description-color': '#c6cbcf', // Your description color
         'title-color': '#fffefa',       // Custom color for the title
         'paragraph-color': '#ded7df',   // Custom color for the paragraph

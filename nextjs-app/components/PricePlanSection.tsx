@@ -9,11 +9,10 @@ const PricePlanSection = () => {
         {/* Column 1: Flexible Plans for Every Business */}
         <div className="md:flex-1 p-10 mb-6 md:mb-0">
         <h4 className="font-bold mb-3 text-2xl">
-        Flexible Plans for Every Business
+        Candidate Token Flexibility
       </h4>
       <p>
-        Choose a plan that aligns with your hiring frequency and business
-        size, with the flexibility to scale as you grow.
+      Leverage our token-based system tailored for diverse hiring needs, offering the adaptability to scale with your business growth.
       </p>
       <ul className="mt-5">
         <li className="flex items-center mb-2">
@@ -24,7 +23,8 @@ const PricePlanSection = () => {
             icon={faCheckCircle}
             className="mr-2 text-27c2d4"
           />
-          Adaptable packages for businesses of any size
+                       Pay-as-you-go with individual resume tokens
+
         </li>
         <li className="flex items-center mb-2">
           <FontAwesomeIcon
@@ -34,7 +34,7 @@ const PricePlanSection = () => {
             icon={faCheckCircle}
             className="mr-2 text-27c2d4"
           />
-          Options for small startups to large enterprises
+              Bulk token packages for high-volume hiring
         </li>
         <li className="flex items-center">
           <FontAwesomeIcon
