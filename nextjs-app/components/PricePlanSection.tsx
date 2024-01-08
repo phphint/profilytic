@@ -51,19 +51,20 @@ const PricePlanSection = () => {
 
         {/* Column 2: AI-Powered Recruitment */}
         <div className="md:flex-1 p-10 mb-6 md:mb-0">
-        <h4 className="font-bold mb-3 text-2xl">AI-Powered Recruitment</h4>
-          <p className="mb-5">
-            Enhance your hiring process with our advanced AI analysis, ensuring
-            efficient and accurate candidate matching.
+          <h4 className="font-bold mb-3 text-2xl">Pay-Per-Resume Pricing</h4>
+          <p>
+            Simple, per-resume pricing suitable for all hiring scales. No subscriptions, just straightforward costs.
           </p>
-          <p className="">
-            Our AI-driven solutions offer deep insights into candidate
-            suitability, streamlining your recruitment pipeline and improving
-            hiring quality.
-          </p>
-          <button className="w-full mt-4 bg-[#27c2d4] hover:bg-[#27c2d4] text-[#e7fdff] font-bold py-2 px-4 rounded">
-            Sign Up
-          </button>
+          <ul className="mt-5">
+            <li className="flex items-center mb-2">
+              <FontAwesomeIcon icon={faCheckCircle} className="mr-2 text-27c2d4" />
+              Pay per resume for precise cost control
+            </li>
+            <li className="flex items-center mb-2">
+              <FontAwesomeIcon icon={faCheckCircle} className="mr-2 text-27c2d4" />
+              Bulk discounts for larger hiring needs
+            </li>
+          </ul>
         </div>
 
         {/* Column 3: Pricing Plans */}

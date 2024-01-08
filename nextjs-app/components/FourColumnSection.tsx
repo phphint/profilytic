@@ -29,13 +29,15 @@ const FourColumnSection = () => {
             </p>
           </div>
 
-   {/* Third Column - AI-Driven Customization */}
+{/* Third Column - AI-Driven Customization */}
 <div className="w-full md:w-1/4 px-2 mb-6 md:mb-0 md:px-10">
-  <h3 className="text-xl font-bold mb-2">AI-Driven Customization</h3>
+  <h3 className="text-xl font-bold mb-2">AI-Driven Analysis</h3>
   <p className="mb-4 font-light">
-    Empower your recruitment with AI that adapts to your needs. Define specific weights and qualifications, and let our intelligent system streamline your hiring process for optimal results.
+  Enhance your recruitment with AI that accurately scores resumes against job descriptions, offering clear, data-driven insights for informed hiring decisions.
   </p>
 </div>
+
+
 
 
           {/* Fourth Column - Reliable Support */}

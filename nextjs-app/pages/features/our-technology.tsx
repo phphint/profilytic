@@ -9,13 +9,14 @@ import AdvancedEvaluationMetricsSection from "../../components/AdvancedEvaluatio
 export default function OurTechnology() {
   return (
     <>
-      <Head>
-        <title>Our Technology - Profilytic</title>
-        <meta
-          name="description"
-          content="Dive deep into the technical workings of Profilytic's AI-driven recruitment technology."
-        />
-      </Head>
+<Head>
+  <title>Our Technology - Profilytic</title>
+  <meta
+    name="description"
+    content="Discover Profilytic's advanced AI technology for resume/CV screening. Learn how our platform utilizes AI to provide efficient candidate analysis, tailored insights, and precise job-role matching, transforming the modern recruitment landscape."
+  />
+</Head>
+
       <GeneralLayout>
         <div className="container mx-auto p-0 shadow-lg  ">
           <div className="mx-auto p-0 text-dark bg-white font-thin">
@@ -54,10 +55,11 @@ export default function OurTechnology() {
     className="text-xl font-semibold"
     style={{ color: "#7bc4d2" }}
   >
-    Candidate Token Pricing
+        Pay-Per-Use Resume/CV Screening
+
   </h2>
   <p className="font-bold">
-    Explore our flexible Candidate Token Pricing options.
+  Experience our straightforward pay-per-use model. 
   </p>
   <div className="flex justify-center">
     <Link href="/pricing">
@@ -66,6 +68,8 @@ export default function OurTechnology() {
       </button>
     </Link>
   </div>
+
+  
 </div>
 
 

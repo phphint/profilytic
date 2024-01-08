@@ -55,7 +55,7 @@ const ThreeColumnSection = () => {
               </a>
             </Link>
             <p className="mt-2 mb-4 font-thin">
-            Discover how our technology can revolutionize your hiring process.
+            Sign up to discover how our technology can revolutionize your hiring process.
             </p>
           </div>
 

@@ -12,12 +12,9 @@ const Header = () => {
         }}
       >
         <div className="w-full flex flex-col justify-center items-center px-4 mb-10 pt-10">
-          <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-fffefa text-center">Transparent Pricing for Every Business</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-2 md:mb-4 text-fffefa text-center">Profilytic's AI Screening Pricing</h1>
           <p className="text-lg md:text-2xl text-2fbfe4 max-w-xl text-center mb-4 md:mb-14">
-            Discover flexible, AI-driven recruitment solutions tailored to your hiring needs.  
-          </p>
-          <p className="text-sm md:text-base text-ded7df max-w-xl text-center mb-4">
-            Choose a flexible solution that scales with your recruitment needs.
+            Explore our straightforward pricing for AI-driven resume/CV analysis. Perfect for recruiters and businesses alike.
           </p>
           <div className="flex items-center">
             <Link href="/signup" passHref>

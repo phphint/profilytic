@@ -12,14 +12,13 @@ import img from "../components/GeneralLayout/features-graph.png";
 export default function Features() {
   return (
     <>
-      <Head>
-      <title>Pricing - Proflytic</title>
-<meta
-  name="description"
-  content="Explore Proflytic's flexible pricing options. Discover how our innovative token-based system can streamline your recruitment process and fit your budget."
-/>
-        {/* Add any additional relevant meta tags for the about page */}
-      </Head>
+  <Head>
+  <title>Pricing - Proflytic</title>
+  <meta
+    name="description"
+    content="View Proflytic's clear, per-resume pricing for AI-driven screening. See how our cost-effective approach, with no hidden fees, makes AI resume evaluation accessible for businesses and recruiters of all sizes."
+  />
+</Head>
       <GeneralLayout>
         <PricePlanSection />
 

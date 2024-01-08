@@ -13,12 +13,12 @@ const Header = () => {
           backgroundPosition: 'right bottom'
         }}
       >
-        {/* Container with mx-auto, padding, and Flexbox for vertical centering */}
         <div className="container mx-auto p-4 flex items-center h-full min-h-[55vh]">
-          <div className="flex flex-col justify-center md:justify-start w-full">
-            <h1 className="text-5xl font-bold mb-4 text-fffefa">AI-Driven Recruitment, Redefined</h1>
+          {/* Adjust the width of this div to limit text content to 50% */}
+          <div className="flex flex-col justify-center md:justify-start w-full md:w-1/2">
+            <h1 className="text-5xl font-bold mb-4 text-fffefa">AI Resume Screening Software</h1>
             <p className="mb-4 text-ded7df">
-              Explore the advanced capabilities of Proflytic in streamlining the hiring process with cutting-edge AI technology.
+              Discover Proflytic's advanced AI-driven candidate evaluation and intelligent resume analysis. Enhance candidate assessment with Profilytic's AI: precise resume/CV screening, in-depth profile analysis, and intelligent role to candidate matching.
             </p>
 
             <div className="hidden md:flex items-center">

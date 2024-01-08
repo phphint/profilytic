@@ -10,22 +10,22 @@ const ScoreMatchMetricsInsightsSection = () => {
       <div className="container mx-auto px-4 pt-5">
         <div className="grid md:grid-cols-2 gap-4">
 
-          {/* Professional Experience Analysis */}
+          {/* Professional Experience  */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Professional Experience Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Provides a weighted score for professional history relevance and delivers both positive and negative AI insights for job alignment.</li>
+                <li>Analyzes professional history, offering balanced insights on its alignment and discrepancies with the job role</li>
               </ul>
             </div>
           </div>
 
-          {/* Educational Background Evaluator */}
+          {/* Educational Background  */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Educational Background Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Assigns a score to academic qualifications and provides AI insights highlighting both strengths and gaps in relation to job requirements.</li>
+                <li>Evaluates academic qualifications, highlighting congruences and gaps in relation to the job's educational needs.</li>
               </ul>
             </div>
           </div>
@@ -35,37 +35,37 @@ const ScoreMatchMetricsInsightsSection = () => {
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Skillset Profiling Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Delivers a score for skill relevance and proficiency with AI insights that identify key skill strengths and potential areas for development.</li>
+                <li>Provides insights on skill relevance and proficiency, pinpointing strengths and areas needing improvement in context with the job.</li>
               </ul>
             </div>
           </div>
 
-          {/* Achievements and Accomplishments Highlighter */}
+          {/* Achievements and Accomplishments  */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Achievements and Accomplishments Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Scores achievements based on their industry relevance and offers insights into how these achievements enhance the candidate's suitability.</li>
+                <li>Assesses the impact of achievements, offering insights on their relevance and areas where they may fall short for the job role.</li>
               </ul>
             </div>
           </div>
 
-          {/* Employment Consistency Tracker */}
+          {/* Employment Consistency  */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Employment Consistency Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Evaluates career stability with a score and provides insights on employment patterns and their implications for the desired role.</li>
+                <li>Examines employment history for stability, providing insights on both consistent patterns and potential concerns for the role.</li>
               </ul>
             </div>
           </div>
 
-          {/* Project and Industry Experience Detector */}
+          {/* Project and Industry Experience  */}
           <div className="md:flex-1 p-2.5">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Project and Industry Experience Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Provides a comprehensive score for project and industry experience, accompanied by insights on relevance and depth in context to the job role.</li>
+                <li>Evaluates project and industry experience, highlighting both its applicability and any areas lacking depth for the job role.</li>
               </ul>
             </div>
           </div>

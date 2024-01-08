@@ -4,14 +4,15 @@ import GeneralLayout from "../components/GeneralLayout/GeneralLayoutAbout";
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About Us - Proflytic</title>
-        <meta
-          name="description"
-          content="Learn more about Proflytic, our mission, and how we are transforming the recruitment process."
-        />
-        {/* Add any additional relevant meta tags for the about page */}
-      </Head>
+<Head>
+  <title>About Us - Proflytic</title>
+  <meta
+    name="description"
+    content="Meet the team behind Proflytic and our vision to revolutionize recruitment with AI. Learn about our dedication to creating efficient, AI-powered resume screening solutions that save time and enhance hiring processes."
+  />
+  {/* Additional meta tags can be added here if needed */}
+</Head>
+
       <GeneralLayout>
       <div className="about-content">
     {/* Content specific to the About page */}

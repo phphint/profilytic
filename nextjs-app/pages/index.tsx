@@ -6,12 +6,13 @@ import FourColumnSection from '../components/FourColumnSection';
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Profilytic - Revolutionizing Recruitment with AI-Driven Solutions</title>
-        <meta name="description" content="Profilytic offers advanced AI-driven recruitment solutions to empower talent acquisition and streamline the hiring process. Explore efficient analytics, data security, and customizable recruitment tools." />
-        <meta name="keywords" content="AI recruitment, talent acquisition, recruitment analytics, data security in recruitment, customizable recruitment tools, efficient hiring solutions" />
-        {/* Other meta tags */}
-      </Head>
+<Head>
+  <title>Profilytic - Revolutionizing Recruitment with AI-Driven Solutions</title>
+  <meta name="description" content="Profilytic reshapes recruitment with cutting-edge AI technology. Specializing in AI resume/CV screening, our platform accelerates candidate evaluation, offering in-depth insights for recruiters and businesses." />
+  <meta name="keywords" content="AI recruitment, AI resume screening, AI CV analysis, recruitment technology, AI in hiring, efficient candidate evaluation" />
+  {/* Other meta tags */}
+</Head>
+
       <LandingPageLayout>
       <ThreeColumnSection></ThreeColumnSection>
       <FourColumnSection></FourColumnSection>
