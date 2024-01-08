@@ -22,9 +22,9 @@ const Banner = () => {
       <div className="container pt-8">
         <Navbar />
         <div className="md:p-8  w-full md:w-1/4 pt-14 mt-10">
-        <h1 className="text-5xl font-bold text-white">Transform Your Hiring Process</h1>
-          <p className="text-white pt-5">Leverage AI to intelligently score candidates against job descriptions</p>
-          <p className="text-white mt-4 mb-8">Experience advanced matching with AI-driven analysis of resumes/CV's and job requirements.</p>
+        <h1 className="text-5xl font-bold text-white">Accelerate Resume/CV Analysis</h1>
+          <p className="text-white pt-5">Efficiently evaluate & screen candidates with AI-driven insights against job descriptions.</p>
+          <p className="text-white mt-4 mb-8">Profilytic's AI platform streamlines candidate screening, saving time and enhancing decision-making.</p>
           <Link href="/features/our-technology" legacyBehavior>
             <a className="text-[#4dedfd] mb-8 inline-flex items-center pb-14">Explore AI Capabilities <FontAwesomeIcon icon={faAngleDoubleRight} width="1em" height="1em" className="ml-2"/></a>
           </Link>
