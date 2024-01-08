@@ -7,7 +7,7 @@ services:
     build:
       context: ./nextjs-app
       dockerfile: Dockerfile
-    mem_limit: 256M
+    mem_limit: 512M
     user: "1000:1000"
     ports:
       - "3004:3000"
@@ -30,7 +30,7 @@ services:
     networks:
       - proxy_app-network
     image: mongo:latest
-    mem_limit: 256M
+    mem_limit: 128M
     ports:
       - "27010:27017"
     volumes:
