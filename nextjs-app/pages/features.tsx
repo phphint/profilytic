@@ -6,13 +6,13 @@ import img from "../components/GeneralLayout/features-graph.png";
 export default function Features() {
   return (
     <>
-<Head>
-  <title>AI Resume Screening Features - Proflytic</title>
-  <meta
-    name="description"
-    content="Explore Proflytic's AI Resume/CV Screening features - the advanced solution for efficient and accurate candidate evaluation. Discover how our AI-driven technology accelerates the recruitment process, offering detailed insights into candidate suitability for specific job roles."
-  />
-</Head>
+      <Head>
+        <title>AI Resume Screening Features - Proflytic</title>
+        <meta
+          name="description"
+          content="Explore Proflytic's AI Resume/CV Screening features - the advanced solution for efficient and accurate candidate evaluation. Discover how our AI-driven technology accelerates the recruitment process, offering detailed insights into candidate suitability for specific job roles."
+        />
+      </Head>
 
       <GeneralLayout>
         <div className="container mx-auto p-4">
@@ -24,34 +24,49 @@ export default function Features() {
             <div className="md:w-1/2 flex flex-wrap">
               {/* Feature 1 */}
               <div className="w-full md:w-1/2 p-2">
-  <h3 className="text-lg font-bold text-title-color">AI Resume Screening</h3>
-  <h4 className="text-md font-semibold text-subtitle-color">Advanced Candidate Matching</h4>
-  <p className="text-description-color">
-    Proflytic's AI technology excels in resume and CV analysis, ensuring precision in matching candidates with job requirements.
-  </p>
-  <div className="border-b border-5c8c80 my-2"></div>
-</div>
+                <h3 className="text-lg font-bold text-title-color">
+                  AI Resume Screening
+                </h3>
+                <h4 className="text-md font-semibold text-subtitle-color">
+                  Advanced Candidate Matching
+                </h4>
+                <p className="text-description-color">
+                  Proflytic's AI technology excels in resume and CV analysis,
+                  ensuring precision in matching candidates with job
+                  requirements.
+                </p>
+                <div className="border-b border-5c8c80 my-2"></div>
+              </div>
 
-{/* Feature 2 - Automated Screening */}
-<div className="w-full md:w-1/2 p-2">
-  <h3 className="text-lg font-bold text-title-color">Automated CV Analysis</h3>
-  <h4 className="text-md font-semibold text-subtitle-color">Efficient Talent Identification</h4>
-  <p className="text-description-color">
-    Streamline the hiring process with our AI-driven candidate screening, quickly identifying top talent.
-  </p>
-  <div className="border-b border-5c8c80 my-2"></div>
-</div>
+              {/* Feature 2 - Automated Screening */}
+              <div className="w-full md:w-1/2 p-2">
+                <h3 className="text-lg font-bold text-title-color">
+                  Automated CV Analysis
+                </h3>
+                <h4 className="text-md font-semibold text-subtitle-color">
+                  Efficient Talent Identification
+                </h4>
+                <p className="text-description-color">
+                  Streamline the hiring process with our AI-driven candidate
+                  screening, quickly identifying top talent.
+                </p>
+                <div className="border-b border-5c8c80 my-2"></div>
+              </div>
 
-{/* Feature 3 - Comprehensive Candidate Analysis */}
-<div className="w-full md:w-1/2 p-2">
-  <h3 className="text-lg font-bold text-title-color">Intelligent Resume Parsing</h3>
-  <h4 className="text-md font-semibold text-subtitle-color">In-depth Candidate Insights</h4>
-  <p className="text-description-color">
-    Gain comprehensive insights with our AI's in-depth analysis of resumes, driving informed recruitment decisions.
-  </p>
-  <div className="border-b border-5c8c80 my-2"></div>
-</div>
-
+              {/* Feature 3 - Comprehensive Candidate Analysis */}
+              <div className="w-full md:w-1/2 p-2">
+                <h3 className="text-lg font-bold text-title-color">
+                  Intelligent Resume Parsing
+                </h3>
+                <h4 className="text-md font-semibold text-subtitle-color">
+                  In-depth Candidate Insights
+                </h4>
+                <p className="text-description-color">
+                  Gain comprehensive insights with our AI's in-depth analysis of
+                  resumes, driving informed recruitment decisions.
+                </p>
+                <div className="border-b border-5c8c80 my-2"></div>
+              </div>
 
               {/* Feature 4 */}
               <div className="w-full md:w-1/2 p-2">
@@ -99,11 +114,20 @@ export default function Features() {
 
             {/* Right Column */}
             <div className="md:w-1/2 p-4">
-              <Image
-                src={img}
-                alt="Innovative recruitment solutions"
-                layout="responsive"
-              />
+            <p className="text-description-color mb-4">
+    Discover the power of Proflytic's AI-driven technology in transforming the recruitment landscape. Our platform offers cutting-edge solutions for resume and CV analysis, enabling efficient and accurate candidate evaluation.
+  </p>
+
+  <Image
+    src={img}
+    alt="Innovative recruitment solutions"
+    layout="responsive"
+  />
+
+  {/* Paragraph below the image */}
+  <p className="text-description-color mt-4">
+    With Proflytic, experience the ease of automating the recruitment process. Our intuitive platform streamlines candidate screening, ensuring you find the right talent quickly and effectively.
+  </p>
             </div>
           </div>
         </div>

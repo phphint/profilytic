@@ -1,6 +1,8 @@
 // PricePlanSection.tsx
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
+
 
 const PricePlanSection = () => {
   return (
@@ -68,26 +70,29 @@ const PricePlanSection = () => {
         </div>
 
         {/* Column 3: Pricing Plans */}
-        <div className="md:flex-1 p-10">
-        <h4 className="font-bold mb-3 text-2xl">Candidate Token Pricing</h4>
-          <p className="mb-4">
-            Each resume token allows processing of one resume, application, or
-            CV.
+          {/* Column 3: Pricing Plans - Highlighted for Immediate Visibility */}
+          <div className="md:flex-1 p-10">
+          <h4 className="font-bold mb-3 text-2xl ">Candidate Token Pricing</h4>
+          <p className="mb-4 text-lg font-semibold">
+            <strong>Individual Tokens:</strong> $0.45 USD per token
           </p>
-          <ul>
-            <li className="mb-2">
-              <strong>Individual Tokens:</strong> $1.20 per token.
-            </li>
-            <li className="mb-2">
-              <strong>Bulk Purchase:</strong> 20% discount on orders over 1000
-              tokens.
-            </li>
-          </ul>
+          <p className="mb-4 text-lg font-semibold">
+            <strong>Bulk Purchase:</strong> 20% discount on orders over 1000 tokens
+          </p>
           <p className="mt-4">
-            Tokens offer the flexibility to pay as you go, ideal for businesses
-            of all sizes and hiring frequencies.
+            Our token system offers the flexibility to pay as you go, ideal for businesses of all sizes.
           </p>
+          <p className="mt-4"> 
+            <Link href="/register" passHref>
+            <button className="w-full bg-button-color text-custom-dark rounded shadow-lg py-2 px-4 rounded text-sm md:text-lg ">              
+              Sign Up
+              </button>
+            </Link>
+            </p>
+    
         </div>
+
+
       </div>
     </section>
   );

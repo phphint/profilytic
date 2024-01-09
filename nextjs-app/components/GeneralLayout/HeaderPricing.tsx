@@ -17,8 +17,8 @@ const Header = () => {
             Explore our straightforward pricing for AI-driven resume/CV analysis. Perfect for recruiters and businesses alike.
           </p>
           <div className="flex items-center">
-            <Link href="/signup" passHref>
-              <button className="bg-[#27c2d4] text-ebd0df py-2 px-4 rounded text-sm md:text-lg font-bold">
+            <Link href="/register" passHref>
+              <button className="bg-button-color text-custom-dark rounded shadow-lg py-2 px-4 rounded text-sm md:text-lg ">
                 Sign Up
               </button>
             </Link>
