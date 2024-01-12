@@ -25,9 +25,6 @@ At Profilytic, we've incorporated a comprehensive suite of metrics into our soft
 ### Project and Industry Experience Detector
 - Highlights specific projects or roles relevant to the targeted job.
 
-### References and Endorsements Reviewer
-- Analyzes the quality and relevance of professional references and recommendations.
-
 Additionally, Profilytic intelligently aligns and compares these metrics against specific job role descriptions, ensuring a precise and tailored match between a candidate's profile and the job requirements.
 
 ## Conclusion

@@ -15,6 +15,7 @@ Profilytic Infrastructure
 │   │               └── Serverless Functions
 │   │                   ├── PDF to Text Conversion (Serverless Function)
 │   │                   └── Resume & Job Description Analysis (Serverless Function)
+│   │                   └── Resume to json formated (Serverless Function)
 │   └── WebSocket Integration (sockets.js)
 │       ├── Real-time Notifications (Errors, Messages)
 │       └── Bi-directional Communication
