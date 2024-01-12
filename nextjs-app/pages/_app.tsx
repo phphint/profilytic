@@ -1,7 +1,6 @@
 // pages/_app.js or pages/_app.tsx
 import "../styles/globals.css"; // Adjust the path to the actual location of your globals.css
 import "../styles/main.css"; // Adjust the path to the actual location of your globals.css
-import TrustedSite from '../components/TrustedSite'; // Adjust the path based on your file structure
 
 
 // pages/_app.js
@@ -19,8 +18,6 @@ function MyApp({ Component, pageProps }) {
         {/* You can also include common meta tags here */}
       </Head>
       <Component {...pageProps} />
-      <TrustedSite />
-
     </>
   );
 }
