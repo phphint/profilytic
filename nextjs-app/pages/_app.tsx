@@ -1,6 +1,7 @@
 // pages/_app.js or pages/_app.tsx
 import "../styles/globals.css"; // Adjust the path to the actual location of your globals.css
 import "../styles/main.css"; // Adjust the path to the actual location of your globals.css
+import Analytics from '../components/Analytics'; // Adjust the path as necessary
 
 
 // pages/_app.js
@@ -17,6 +18,8 @@ function MyApp({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* You can also include common meta tags here */}
       </Head>
+      <Analytics />
+
       <Component {...pageProps} />
     </>
   );
