@@ -1,35 +1,19 @@
 Profilytic Infrastructure
 │
-├── Next.js Backend (Handles Auth, State, Payment)
-│   ├── User Authentication (Login/Signup)
-│   ├── State Management
-│   ├── Payment Handling (Stripe Integration)
-│   ├── API Endpoints
-│   │   └── Resume Management
-│   │       ├── User Management
-│   │       ├── Company & Job Management
-│   │       ├── Resume Upload and Status Updates
-│   │       └── Cron-based Node.js Backend
-│   │           └── Resume Processing Scheduler
-│   │               ├── Schedules and triggers serverless functions
-│   │               └── Serverless Functions
-│   │                   ├── PDF to Text Conversion (Serverless Function)
-│   │                   └── Resume & Job Description Analysis (Serverless Function)
-│   │                   └── Resume to json formated (Serverless Function)
-│   └── WebSocket Integration (sockets.js)
-│       ├── Real-time Notifications (Errors, Messages)
-│       └── Bi-directional Communication
+├── Backend Service (backend.proflytic.com)
+│   ├── Handles user authentication, resume uploads, and initial processing requests
+│   ├── Communicates directly with Temporal Cloud to manage workflows
+│   └── Uses MongoDB Atlas for data storage
 │
-├── Unified Database (MongoDB Atlas Serverless)
-│   ├── User Collection
-│   ├── Company Collection
-│   ├── Job Collection
-│   ├── Resume Collection
-│   ├── AIAnalysisResult Collection
-│   ├── ProcessingQueue Collection
-│   ├── TokenTransaction Collection
-│   ├── AIInteraction Collection
-│   └── ErrorLog Collection
+├── Temporal Cloud
+│   ├── Orchestrates and manages complex resume processing workflows
+│   └── Provides robust error handling and retry mechanisms
 │
-└── Third-Party Services
-    └── Stripe (Payment Processing)
+├── MongoDB Atlas
+│   └── Stores all user information, resume data, and processing results
+│
+├── Digital Ocean Spaces
+│   └── Stores resumes securely in the cloud
+│
+└── Real-time Status Updates
+    └── Implemented via WebSockets or SSE to provide live processing updates to users
