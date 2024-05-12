@@ -26,7 +26,7 @@ const Footer = () => {
             <Link href="/privacy"><span className="cursor-pointer">Privacy Policy</span></Link>
           </li>
         </ul>
-        <p className="text-sm">© {currentYear} Profilytic. All rights reserved.</p>
+        <p className="text-sm">© {currentYear} Profilytic, LLC. All rights reserved.</p>
       </div>
     </footer>
   );

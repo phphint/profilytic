@@ -16,7 +16,10 @@ const Analytics: React.FC = () => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-2P0QJGXGSX');
+          gtag('config', 'G-2P0QJGXGSX', {
+            'anonymize_ip': true,
+            'allow_ad_personalization_signals': false
+          });
         `}
       </Script>
     </>
