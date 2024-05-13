@@ -15,7 +15,7 @@ const ScoreMatchMetricsInsightsSection = () => {
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">ScoreMatch Overall Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Generates an overall score that reflects the AI’s assessment of each candidate's suitability for the job role, based on a holistic analysis rather than a sum of individual metrics. This score helps prioritize candidates who best match the job criteria according to AI-driven insights.</li>
+                <li>Provides a comprehensive score to prioritize top candidates.</li>
               </ul>
             </div>
           </div>
@@ -25,7 +25,7 @@ const ScoreMatchMetricsInsightsSection = () => {
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Professional Experience Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Analyzes professional history to provide a score, highlights alignment with the job's needs, and points out any experience gaps or discrepancies.</li>
+                <li>Scores and highlights alignment with job needs and experience gaps.</li>
               </ul>
             </div>
           </div>
@@ -35,17 +35,17 @@ const ScoreMatchMetricsInsightsSection = () => {
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Educational Background Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Evaluates academic qualifications, providing a score, and highlights both the alignment and discrepancies of education in relevance to the job role.</li>
+                <li>Evaluates academic qualifications and job relevance.</li>
               </ul>
             </div>
-          </div>
+          </div> 
 
           {/* Skillset Profiling */}
           <div className="md:flex-1 p-2.5 mb-4 md:mb-0">
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Skillset Profiling Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Provides a score based on skill relevance and proficiency, detailing strengths and pinpointing skills that need improvement relative to the job requirements.</li>
+                <li>Assesses skill relevance and proficiency for the job.</li>
               </ul>
             </div>
           </div>
@@ -55,7 +55,7 @@ const ScoreMatchMetricsInsightsSection = () => {
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Employment Consistency Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Provides a score assessing employment history stability, highlights employment patterns that align with the job's demands, and discusses potential concerns.</li>
+                <li>Analyzes employment history stability and patterns.</li>
               </ul>
             </div>
           </div>
@@ -65,7 +65,7 @@ const ScoreMatchMetricsInsightsSection = () => {
             <div className="bg-[#1a222d] p-10">
               <h4 className="font-semibold text-xl mb-3">Project and Industry Experience Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Provides a score evaluating the relevance of project and industry experience, discusses how well past experience aligns with the job role, and identifies any shortcomings.</li>
+                <li>Evaluates the relevance of project and industry experience.</li>
               </ul>
             </div>
           </div>
