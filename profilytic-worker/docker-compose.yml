@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  temporal-worker:
+    networks:
+      - proxy_app-network
+    build:
+      context: .
+      dockerfile: Dockerfile
+    mem_limit: 512M
+    user: "1000:1000"
+    environment:
+      - NODE_ENV=development
+      - TEMPORAL_ADDRESS=<your-temporal-server-address>
+      - MESSAGE_BROKER_URI=redis://message-broker:6379
+    command: npm run dev
+
+networks:
+  proxy_app-network:
+    external: true

@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  backend:
+    networks:
+      - proxy_app-network
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=${NODE_ENV}
+    mem_limit: 512M
+    user: "1000:1000"
+    ports:
+      - "3005:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - MONGODB_URI=<your-serverless-mongodb-uri>
+      - MESSAGE_BROKER_URI=redis://message-broker:6379
+      - LETSENCRYPT_HOST=api.profilytic.com
+      - LETSENCRYPT_EMAIL=jason@mavacode.com
+      - VIRTUAL_HOST=api.profilytic.com
+      - VIRTUAL_PORT=3000
+    command: npm run dev
+
+networks:
+  proxy_app-network:
+    external: true

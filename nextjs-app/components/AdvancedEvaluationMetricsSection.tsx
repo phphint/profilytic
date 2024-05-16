@@ -63,9 +63,9 @@ const ScoreMatchMetricsInsightsSection = () => {
           {/* Project and Industry Experience */}
           <div className="md:flex-1 p-2.5">
             <div className="bg-[#1a222d] p-10">
-              <h4 className="font-semibold text-xl mb-3">Project and Industry Experience Metric</h4>
+              <h4 className="font-semibold text-xl mb-3">Projects and Industries Experience Metric</h4>
               <ul className="list-disc list-inside text-gray-300">
-                <li>Evaluates the relevance of project and industry experience.</li>
+                <li>Evaluates the relevance of projects and industries experience.</li>
               </ul>
             </div>
           </div>

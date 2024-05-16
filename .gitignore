@@ -6,3 +6,15 @@ nextjs-app/.next
 nextjs-app/dist
 nextjs-app/logs
 nextjs-app/.cache
+LLC Files/
+nextjs-app/.env
+profilytic-backend/node_modules/
+profilytic-backend/.env
+profilytic-backend/.env.development
+profilytic-backend/.env.production
+profilytic-backend/.env.staging
+profilytic-worker/.env
+profilytic-worker/.env.development
+profilytic-worker/.env.production
+profilytic-worker/.env.staging
+profilytic-worker/node_modules/

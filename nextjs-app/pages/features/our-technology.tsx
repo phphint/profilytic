@@ -251,7 +251,7 @@ export default function OurTechnology() {
   </p>
 </div>
 
-
+ 
 
             </div>
           </div>
@@ -261,4 +261,4 @@ export default function OurTechnology() {
       </GeneralLayout>
     </>
   );
-}
+} 
