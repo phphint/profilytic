@@ -1,4 +1,4 @@
-# Profilytic Worker
+# Profilytic
 
 © 2024 Jason Phillips and Profilytic, LLC USA. All rights reserved.
 
@@ -6,7 +6,7 @@ This repository contains proprietary source code and other intellectual property
 
 ## License
 
-This software is not licensed for public use. All rights are reserved by the copyright holders. For inquiries regarding permissions, please contact Jason Phillips at [your-email@example.com].
+This software is not licensed for public use. All rights are reserved by the copyright holders. For inquiries regarding permissions, please contact Jason Phillips at jason@profilytic.com.
 
 ---
 
