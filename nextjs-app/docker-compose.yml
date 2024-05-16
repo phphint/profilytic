@@ -18,12 +18,11 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=${NODE_ENV}
-      - MONGODB_URI=<your-serverless-mongodb-uri>
-      - MESSAGE_BROKER_URI=redis://message-broker:6379
-      - LETSENCRYPT_HOST=api.profilytic.com
-      - LETSENCRYPT_EMAIL=jason@mavacode.com
-      - VIRTUAL_HOST=api.profilytic.com
-      - VIRTUAL_PORT=3000
+      - MESSAGE_BROKER_URI=${MESSAGE_BROKER_URI}
+      - LETSENCRYPT_HOST=${LETSENCRYPT_HOST}
+      - LETSENCRYPT_EMAIL=${LETSENCRYPT_EMAIL}
+      - VIRTUAL_HOST=${VIRTUAL_HOST}
+      - VIRTUAL_PORT=${VIRTUAL_PORT}
     command: npm run dev
 
 networks:

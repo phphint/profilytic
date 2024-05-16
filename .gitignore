@@ -8,6 +8,9 @@ nextjs-app/logs
 nextjs-app/.cache
 LLC Files/
 nextjs-app/.env
+nextjs-app/.env.development
+nextjs-app/.env.production
+nextjs-app/.env.staging
 profilytic-backend/node_modules/
 profilytic-backend/.env
 profilytic-backend/.env.development

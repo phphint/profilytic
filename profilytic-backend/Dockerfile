@@ -21,7 +21,7 @@ ENV NODE_ENV $NODE_ENV
 RUN if [ "$NODE_ENV" = "production" ]; then npm run build; fi
 
 # Expose port 3000
-EXPOSE 3000
+EXPOSE 3001
 
 # Start the application
 CMD ["npm", "run", "dev"]
