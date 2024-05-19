@@ -1,9 +1,8 @@
 version: '3'
 
 services:
-  backend:
-    networks:
-      - proxy_app-network
+  nextjs-app:
+    container_name: nextjs-app
     build:
       context: .
       dockerfile: Dockerfile
@@ -12,7 +11,7 @@ services:
     mem_limit: 512M
     user: "1000:1000"
     ports:
-      - "3005:3000"
+      - "3000:3000"
     volumes:
       - ./:/app
       - /app/node_modules
@@ -24,6 +23,8 @@ services:
       - VIRTUAL_HOST=${VIRTUAL_HOST}
       - VIRTUAL_PORT=${VIRTUAL_PORT}
     command: npm run dev
+    networks:
+      - proxy_app-network
 
 networks:
   proxy_app-network:

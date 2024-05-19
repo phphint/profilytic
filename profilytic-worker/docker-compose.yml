@@ -7,13 +7,21 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules # Ensure the container uses its own node_modules
+
+    ports:
+      - "3003:3000"
     mem_limit: 512M
     user: "1000:1000"
+    env_file:
+      - .env.development
     environment:
-      - NODE_ENV=development
-      - TEMPORAL_ADDRESS=<your-temporal-server-address>
-      - MESSAGE_BROKER_URI=redis://message-broker:6379
-    command: npm run dev
+      - TS_NODE_TRANSPILE_ONLY=true
+    command: sh -c 'npx ts-node-dev --respawn src/index.ts'
+
+
 
 networks:
   proxy_app-network:
