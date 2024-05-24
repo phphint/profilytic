@@ -1,5 +1,6 @@
 import axios from 'axios';
 import config from '../config/configLoader';
+import { IEmailNotificationService, Attachment } from '../interfaces/IEmailNotificationService';
 
 const SENDPULSE_API_URL = 'https://api.sendpulse.com';
 const { sendPulseApiUserId, sendPulseApiSecret } = config;
@@ -22,13 +23,13 @@ const getToken = async (): Promise<string> => {
   }
 };
 
-export const sendEmail = async (
-  to: string,
-  subject: string,
-  html: string,
-  text?: string,
-  attachments?: Attachment[],
-): Promise<void> => {
+export const sendEmail: IEmailNotificationService['sendEmail'] = async (
+  to,
+  subject,
+  html,
+  text,
+  attachments
+) => {
   try {
     const token = await getToken();
 

@@ -8,9 +8,10 @@ import { v4 as uuidv4 } from 'uuid';
 
 class AuthService implements IAuthService {
   async register(email: string, password: string, name: string, companyName: string, phone?: string): Promise<any> {
+    console.log('Starting registration process...');
     const existingCompany = await Company.findOne({ name: companyName });
-    let company;
 
+    let company;
     if (existingCompany) {
       company = existingCompany;
     } else {
@@ -18,19 +19,27 @@ class AuthService implements IAuthService {
       await company.save();
     }
 
-    const user = new User({ email, password, name, company: company._id });
+    const hashedPassword = await bcrypt.hash(password, 10);
+    console.log('Hashed password:', hashedPassword);  // Log the hashed password
+
+    const user = new User({ email, password: hashedPassword, name, company: company._id });
     if (phone) {
       user.phone = phone;
     }
-    user.password = await bcrypt.hash(password, 10);
     await user.save();
 
-    const workflowClient = getWorkflowClient();
-    await workflowClient.start('sendWelcomeEmailWorkflow', {
-      workflowId: `welcome-email-${email}-${uuidv4()}`,
-      args: [email],
-      taskQueue: 'profilytic-tasks'
-    });
+    console.log('User registered successfully:', user);
+
+    try {
+      const workflowClient = getWorkflowClient();
+      await workflowClient.start('sendWelcomeEmailWorkflow', {
+        workflowId: `welcome-email-${email}-${uuidv4()}`,
+        args: [email],
+        taskQueue: 'profilytic-tasks'
+      });
+    } catch (error) {
+      console.error('Failed to start sendWelcomeEmail workflow:', error);
+    }
 
     return user;
   }

@@ -6,6 +6,7 @@ import Modal from 'react-modal';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { useRouter } from 'next/router';
 import TermsContent from '../components/TermsContent';
 
 // Set the app element for accessibility
@@ -28,12 +29,18 @@ export default function Register() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const router = useRouter();
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
 
   const onSubmit = async (data) => {
+    setIsSubmitting(true);
+    setSuccessMessage('');
     try {
       const response = await fetch(`${apiUrl}/api/users/register`, {
         method: 'POST',
@@ -46,18 +53,25 @@ export default function Register() {
       if (response.ok) {
         const result = await response.json();
         console.log('User registered:', result);
+        setSuccessMessage('Registration successful! You can now log in.');
+        setIsRegistered(true);
+        setTimeout(() => {
+          router.push('/login');
+        }, 3000); // 3 seconds delay before redirecting
       } else {
         console.error('Registration failed');
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <>
       <Head>
-        <title>Register - Proflytic</title>
+        <title>Register - Profilytic</title>
       </Head>
       <GeneralLayout backgroundImage={backgroundImageUrl}>
         <div className="container mx-auto p-4 flex justify-center">
@@ -73,6 +87,7 @@ export default function Register() {
                 {...register('name')}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
               />
               {errors.name && <p className="text-red-500 text-xs italic">{errors.name.message}</p>}
             </div>
@@ -88,6 +103,7 @@ export default function Register() {
                 {...register('email')}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
               />
               {errors.email && <p className="text-red-500 text-xs italic">{errors.email.message}</p>}
             </div>
@@ -103,6 +119,7 @@ export default function Register() {
                 {...register('password')}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
               />
               {errors.password && <p className="text-red-500 text-xs italic">{errors.password.message}</p>}
             </div>
@@ -118,6 +135,7 @@ export default function Register() {
                 {...register('confirmPassword')}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                 style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
               />
               {errors.confirmPassword && <p className="text-red-500 text-xs italic">{errors.confirmPassword.message}</p>}
             </div>
@@ -133,6 +151,7 @@ export default function Register() {
                 {...register('company')}
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
               />
               {errors.company && <p className="text-red-500 text-xs italic">{errors.company.message}</p>}
             </div>
@@ -144,6 +163,7 @@ export default function Register() {
                   type="checkbox"
                   {...register('termsAgreed')}
                   className="mr-2 leading-tight"
+                  disabled={isSubmitting || isRegistered}
                 />
                 I agree to the <span className="underline cursor-pointer" onClick={() => setModalIsOpen(true)}>Terms and Conditions</span>
               </label>
@@ -152,10 +172,21 @@ export default function Register() {
 
             {/* Register Button */}
             <div className="flex items-center justify-between">
-              <button className="w-full bg-[#c5f6fa] hover:bg-[#b2e6ec] text-[#394774] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-                Register
+              <button
+                className="w-full bg-[#c5f6fa] hover:bg-[#b2e6ec] text-[#394774] font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
+                disabled={isSubmitting || isRegistered}
+              >
+                {isSubmitting ? 'Registering...' : 'Register'}
               </button>
             </div>
+
+            {/* Success Message */}
+            {successMessage && (
+              <div className="mt-4 text-green-500 text-sm font-bold">
+                {successMessage}
+              </div>
+            )}
 
             {/* Link to Login */}
             <div className="mt-4">

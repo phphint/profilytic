@@ -48,12 +48,13 @@ const UserSchema: Schema = new Schema({
 
 // Pre-save hook to hash password before saving
 UserSchema.pre<IUser>('save', async function (next) {
-  if (this.isModified('password')) {
+  if (this.isModified('password') && !this.password.startsWith('$2a$')) {
     const salt = await bcrypt.genSalt(10);
     this.password = await bcrypt.hash(this.password, salt);
   }
   next();
 });
+
 
 // Interface for the User model
 interface IUserModel extends Model<IUser> {

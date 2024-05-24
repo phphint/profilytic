@@ -3,28 +3,26 @@ import config from '../config/configLoader';
 
 const { temporalAddress } = config;
 
-let workflowClient: WorkflowClient;
+let workflowClient: WorkflowClient | null = null;
+
+async function connectToTemporal(): Promise<Connection> {
+  console.log(`Attempting to connect to Temporal server at ${temporalAddress}`);
+  const connection = await Connection.connect({
+    address: temporalAddress,
+    tls: false,
+    connectTimeout: 10000, // 10 seconds timeout
+  });
+  console.log('Connection established');
+  return connection;
+}
 
 export async function createTemporalClient(): Promise<void> {
-  try {
-    console.log('Attempting to connect to Temporal server at', temporalAddress);
-    
-    const connection = await Connection.connect({
-      address: temporalAddress,
-      tls: false,
-
-    });
-
-    console.log('Connection established');
-
+  if (!workflowClient) {
+    const connection = await connectToTemporal();
     workflowClient = new WorkflowClient({
       connection,
     });
-
     console.log('Connected to Temporal at', temporalAddress);
-  } catch (error) {
-    console.error('Failed to connect to Temporal server:', error);
-    throw error;
   }
 }
 

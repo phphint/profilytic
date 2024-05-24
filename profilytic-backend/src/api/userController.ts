@@ -1,7 +1,7 @@
 import { Router, Request, Response } from 'express';
 import { body, validationResult } from 'express-validator';
 import { authService } from '../services/authService';
-import { Connection, WorkflowClient } from '@temporalio/client';
+import { createTemporalClient, getWorkflowClient } from '../clients/temporalClient';
 import { v4 as uuidv4 } from 'uuid';
 
 const router = Router();
@@ -21,15 +21,19 @@ router.post('/register',
       const { email, password, name, company, phone } = req.body;
       const user = await authService.register(email, password, name, company, phone);
 
-      // Send welcome email via Temporal
-      const connection = await Connection.connect();
-      const client = new WorkflowClient(connection.service);
-
-      await client.start('sendWelcomeEmail', {
-        args: [email],
-        taskQueue: 'profilytic-tasks',
-        workflowId: `send-welcome-email-${uuidv4()}`,
-      });
+      // Send welcome email via Temporal asynchronously
+      try {
+        await createTemporalClient();
+        const client = getWorkflowClient();
+        await client.start('sendWelcomeEmailWorkflow', {
+          args: [email],
+          taskQueue: 'profilytic-tasks',
+          workflowId: `send-welcome-email-${uuidv4()}`,
+        });
+        console.log(`sendWelcomeEmailWorkflow successfully started for ${email}`);
+      } catch (workflowError) {
+        console.error('Failed to start sendWelcomeEmailWorkflow:', workflowError);
+      }
 
       res.status(201).json(user);
     } catch (error) {
@@ -75,15 +79,19 @@ router.post('/forgot-password',
     try {
       const resetLink = await authService.forgotPassword(req.body.email);
 
-      // Send password reset email via Temporal
-      const connection = await Connection.connect();
-      const client = new WorkflowClient(connection.service);
-
-      await client.start('sendPasswordResetEmail', {
-        args: [req.body.email, resetLink],
-        taskQueue: 'profilytic-tasks',
-        workflowId: `send-password-reset-email-${uuidv4()}`,
-      });
+      // Send password reset email via Temporal asynchronously
+      try {
+        await createTemporalClient();
+        const client = getWorkflowClient();
+        await client.start('sendPasswordResetEmailWorkflow', {
+          args: [req.body.email, resetLink],
+          taskQueue: 'profilytic-tasks',
+          workflowId: `send-password-reset-email-${uuidv4()}`,
+        });
+        console.log(`sendPasswordResetEmailWorkflow successfully started for ${req.body.email}`);
+      } catch (workflowError) {
+        console.error('Failed to start sendPasswordResetEmailWorkflow:', workflowError);
+      }
 
       res.status(200).json({ message: 'Password reset email sent' });
     } catch (error) {
