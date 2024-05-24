@@ -17,9 +17,7 @@ services:
     user: "1000:1000"
     env_file:
       - .env.development
-    environment:
-      - TS_NODE_TRANSPILE_ONLY=true
-    command: sh -c 'npx ts-node-dev --respawn src/index.ts'
+  
 
 
 

@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import { connectToDatabase } from './clients/databaseClient'; // Import the database client
 import config from './config/configLoader'; // Import the config loader
 import path from 'path';
-import { createTemporalClient } from './clients/temporalClient'; // Import the Temporal client
 import fs from 'fs';
 
 // Load environment variables from .env file
@@ -29,13 +28,14 @@ async function createConnection() {
         console.log(`Retrying connection in ${retryDelay / 1000} seconds...`);
         await new Promise(res => setTimeout(res, retryDelay));
       } else {
-        throw new Error('Max retries reached. Could not connect to Temporal server.');
+        console.log('Max retries reached. Could not connect to Temporal server.');
+        throw error;
       }
     }
   }
 }
 
-async function run() {
+async function createWorker(connection: NativeConnection) {
   try {
     console.log('Starting worker setup...');
 
@@ -43,11 +43,6 @@ async function run() {
     console.log('Connecting to MongoDB...');
     await connectToDatabase();
     console.log('Connected to MongoDB.');
-
-    // Create Temporal client connection
-    console.log('Creating Temporal client connection...');
-    const connection = await createConnection();
-    console.log('Temporal client connection established.');
 
     // Log the resolved workflows path
     const workflowsPath = path.resolve(__dirname, 'workflows');
@@ -61,14 +56,17 @@ async function run() {
       console.log(`Workflows path exists: ${workflowsPath}`);
     }
 
-    // Create a worker with specified task queue, workflows, and activities
+    // Register activities
+    const activities = {
+      ...require('./activities/emailNotificationActivity').emailNotificationActivity,
+    };
+    console.log('Registered activities:', activities);
+
     console.log('Creating Temporal worker...');
     const worker = await Worker.create({
       connection,
       workflowsPath,
-      activities: {
-        emailNotificationActivity: require('./activities/emailNotificationActivity').emailNotificationActivity,
-      },
+      activities,
       taskQueue: config.temporalTaskQueue,
     });
 
@@ -81,16 +79,26 @@ async function run() {
   } catch (err) {
     if (err instanceof Error) {
       console.error('Error during worker setup:', err.message);
-      process.exit(1);
     } else {
       console.error('Unknown error during worker setup:', err);
-      process.exit(1);
+    }
+    process.exit(1);
+  }
+}
+
+
+async function run() {
+  while (true) {
+    try {
+      const connection = await createConnection();
+      await createWorker(connection);
+      break; // Exit the loop if the worker starts successfully
+    } catch (err) {
+      console.error('Unhandled error:', err instanceof Error ? err.message : err);
+      console.log('Retrying in 10 seconds...');
+      await new Promise(res => setTimeout(res, 10000));
     }
   }
 }
 
-// Handle any errors
-run().catch(err => {
-  console.error('Unhandled error:', err instanceof Error ? err.message : err);
-  process.exit(1);
-});
+run();

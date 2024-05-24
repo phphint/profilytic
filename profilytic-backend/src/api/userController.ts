@@ -17,13 +17,8 @@ router.post('/register',
     }
 
     try {
-      const user = await authService.register(
-        req.body.email,
-        req.body.password,
-        req.body.fullName,
-        req.body.phone,
-        req.body.company
-      );
+      const { email, password, fullName, phone, company, smsNumber } = req.body;
+      const user = await authService.register(email, password, fullName, phone, company, smsNumber);
       res.status(201).json(user);
     } catch (error) {
       if (error instanceof Error) {
@@ -68,6 +63,30 @@ router.post('/forgot-password',
     try {
       const response = await authService.forgotPassword(req.body.email);
       res.status(200).json(response);
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ message: error.message });
+      } else {
+        res.status(500).json({ message: 'Unknown error occurred' });
+      }
+    }
+  }
+);
+
+router.post('/delegate-access',
+  body('userId').notEmpty().withMessage('User ID is required'),
+  body('delegateId').notEmpty().withMessage('Delegate ID is required'),
+  body('roles').isArray().withMessage('Roles must be an array'),
+  async (req: Request, res: Response) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const { userId, delegateId, roles } = req.body;
+      const user = await authService.delegateAccess(userId, delegateId, roles);
+      res.status(200).json(user);
     } catch (error) {
       if (error instanceof Error) {
         res.status(500).json({ message: error.message });

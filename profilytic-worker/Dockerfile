@@ -1,4 +1,5 @@
 # Use the official Node.js 22.2.0-slim image as a base
+# Temporal SDK requires amd64
 FROM --platform=linux/amd64 node:22.2.0-slim
 
 # Set the working directory

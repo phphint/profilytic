@@ -1,19 +1,65 @@
-import { Schema, model, Document } from 'mongoose';
+import mongoose, { Schema, Document, Model } from 'mongoose';
 
-interface IUser extends Document {
+interface IApiKey {
+  key: string;
+  createdAt: Date;
+  status: 'active' | 'inactive';
+}
+
+interface IDelegatedAccess {
+  userId: mongoose.Types.ObjectId;
+  roles: string[];
+}
+
+export interface IUser extends Document {
   email: string;
   password: string;
   fullName: string;
   phone: string;
-  company: Schema.Types.ObjectId;
+  company: mongoose.Types.ObjectId;
+  smsNumber?: string;
+  delegatedAccess: IDelegatedAccess[];
+  apiKeys: IApiKey[];
 }
 
-const userSchema = new Schema<IUser>({
+// Schema definition
+const UserSchema: Schema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   fullName: { type: String, required: true },
   phone: { type: String, required: true },
-  company: { type: Schema.Types.ObjectId, ref: 'Company', required: true }
+  company: { type: mongoose.Types.ObjectId, ref: 'Company', required: true },
+  smsNumber: { type: String, required: false },
+  delegatedAccess: [
+    {
+      userId: { type: mongoose.Types.ObjectId, ref: 'User', required: true },
+      roles: { type: [String], required: true, enum: ['Billing', 'Add', 'Edit', 'Read'] }
+    }
+  ],
+  apiKeys: [
+    {
+      key: { type: String, required: true },
+      createdAt: { type: Date, required: true, default: Date.now },
+      status: { type: String, required: true, enum: ['active', 'inactive'], default: 'active' }
+    }
+  ]
+}, { timestamps: true });
+
+// Pre-save hook to hash password before saving
+UserSchema.pre<IUser>('save', async function (next) {
+  if (this.isModified('password')) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+  }
+  next();
 });
 
-export const User = model<IUser>('User', userSchema);
+// Interface for the User model
+interface IUserModel extends Model<IUser> {
+  // Define any static methods here if needed
+}
+
+// Create the User model
+const User: IUserModel = mongoose.model<IUser, IUserModel>('User', UserSchema);
+
+export default User;
