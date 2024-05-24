@@ -2,8 +2,7 @@ import { Worker, NativeConnection } from '@temporalio/worker';
 import dotenv from 'dotenv';
 import { connectToDatabase } from './clients/databaseClient'; // Import the database client
 import config from './config/configLoader'; // Import the config loader
-import path from 'path';
-import fs from 'fs';
+import * as emailNotificationActivity from './activities/emailNotificationActivity'; // Import activities
 
 // Load environment variables from .env file
 dotenv.config();
@@ -44,28 +43,17 @@ async function createWorker(connection: NativeConnection) {
     await connectToDatabase();
     console.log('Connected to MongoDB.');
 
-    // Log the resolved workflows path
-    const workflowsPath = path.resolve(__dirname, 'workflows');
-    console.log(`Resolved workflows path: ${workflowsPath}`);
-
-    // Check if the directory exists
-    if (!fs.existsSync(workflowsPath)) {
-      console.error(`Workflows path does not exist: ${workflowsPath}`);
-      process.exit(1);
-    } else {
-      console.log(`Workflows path exists: ${workflowsPath}`);
-    }
-
     // Register activities
     const activities = {
-      ...require('./activities/emailNotificationActivity').emailNotificationActivity,
+      ...emailNotificationActivity.emailNotificationActivity,
     };
     console.log('Registered activities:', activities);
 
+    // Create the Temporal worker with explicitly imported workflows
     console.log('Creating Temporal worker...');
     const worker = await Worker.create({
       connection,
-      workflowsPath,
+      workflowsPath: require.resolve('./workflows/emailManagement'), // Adjusted to use the correct path
       activities,
       taskQueue: config.temporalTaskQueue,
     });
@@ -85,7 +73,6 @@ async function createWorker(connection: NativeConnection) {
     process.exit(1);
   }
 }
-
 
 async function run() {
   while (true) {

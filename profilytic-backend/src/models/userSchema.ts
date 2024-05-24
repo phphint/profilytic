@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document, Model } from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 interface IApiKey {
   key: string;
@@ -14,8 +15,8 @@ interface IDelegatedAccess {
 export interface IUser extends Document {
   email: string;
   password: string;
-  fullName: string;
-  phone: string;
+  name: string;
+  phone?: string;
   company: mongoose.Types.ObjectId;
   smsNumber?: string;
   delegatedAccess: IDelegatedAccess[];
@@ -26,8 +27,8 @@ export interface IUser extends Document {
 const UserSchema: Schema = new Schema({
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  fullName: { type: String, required: true },
-  phone: { type: String, required: true },
+  name: { type: String, required: true },
+  phone: { type: String, required: false },
   company: { type: mongoose.Types.ObjectId, ref: 'Company', required: true },
   smsNumber: { type: String, required: false },
   delegatedAccess: [

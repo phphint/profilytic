@@ -7,26 +7,26 @@ const { sendWelcomeEmail, sendPasswordResetEmail } = proxyActivities<typeof emai
 });
 
 // Export the email management functions with logging
-export const emailManagement = {
-  sendWelcomeEmail: async (to: string) => {
-    console.log(`[DEBUG] sendWelcomeEmail called with to: ${to}`);
-    try {
-      await sendWelcomeEmail(to);
-      console.log(`[DEBUG] sendWelcomeEmail successfully sent to: ${to}`);
-    } catch (error) {
-      console.error(`[ERROR] sendWelcomeEmail failed for to: ${to}, error: ${error}`);
-      throw error;
-    }
-  },
-
-  sendPasswordResetEmail: async (to: string, resetLink: string) => {
-    console.log(`[DEBUG] sendPasswordResetEmail called with to: ${to}, resetLink: ${resetLink}`);
-    try {
-      await sendPasswordResetEmail(to, resetLink);
-      console.log(`[DEBUG] sendPasswordResetEmail successfully sent to: ${to}`);
-    } catch (error) {
-      console.error(`[ERROR] sendPasswordResetEmail failed for to: ${to}, resetLink: ${resetLink}, error: ${error}`);
-      throw error;
-    }
+export async function sendWelcomeEmailWorkflow(to: string) {
+  console.log(`[DEBUG] sendWelcomeEmailWorkflow called with to: ${to}`);
+  try {
+    console.log('[DEBUG] Calling sendWelcomeEmail activity');
+    await sendWelcomeEmail(to);
+    console.log(`[DEBUG] sendWelcomeEmail successfully sent to: ${to}`);
+  } catch (error) {
+    console.error(`[ERROR] sendWelcomeEmail failed for to: ${to}, error: ${error}`);
+    throw error;
   }
-};
+}
+
+export async function sendPasswordResetEmailWorkflow(to: string, resetLink: string) {
+  console.log(`[DEBUG] sendPasswordResetEmail called with to: ${to}, resetLink: ${resetLink}`);
+  try {
+    console.log('[DEBUG] Calling sendPasswordResetEmail activity');
+    await sendPasswordResetEmail(to, resetLink);
+    console.log(`[DEBUG] sendPasswordResetEmail successfully sent to: ${to}`);
+  } catch (error) {
+    console.error(`[ERROR] sendPasswordResetEmail failed for to: ${to}, resetLink: ${resetLink}, error: ${error}`);
+    throw error;
+  }
+}

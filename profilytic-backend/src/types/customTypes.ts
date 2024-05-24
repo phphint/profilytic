@@ -1,10 +1,6 @@
-// src/types/customTypes.ts
-
 import { Request } from 'express';
+import { Document } from 'mongoose';
 
 export interface CustomRequest extends Request {
-  user?: {
-    id: string;
-    // Add other fields if your JWT contains more information
-  };
+  user?: Document; // Adjust the type as needed to match your User model
 }

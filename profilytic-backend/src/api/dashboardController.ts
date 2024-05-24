@@ -1,5 +1,3 @@
-// src/api/dashboardController.ts
-
 import { Router, Response } from 'express';
 import { Company } from '../models/companySchema';
 import { Job } from '../models/jobSchema';
