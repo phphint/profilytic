@@ -9,23 +9,23 @@ import { v4 as uuidv4 } from 'uuid';
 class AuthService implements IAuthService {
   async register(email: string, password: string, name: string, companyName: string, phone?: string): Promise<any> {
     console.log('Starting registration process...');
-    const existingCompany = await Company.findOne({ name: companyName });
-
-    let company;
-    if (existingCompany) {
-      company = existingCompany;
-    } else {
-      company = new Company({ name: companyName });
-      await company.save();
-    }
+    let company = await Company.findOne({ name: companyName });
 
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log('Hashed password:', hashedPassword);  // Log the hashed password
 
-    const user = new User({ email, password: hashedPassword, name, company: company._id });
-    if (phone) {
-      user.phone = phone;
+    const user = new User({ email, password: hashedPassword, name, phone });
+
+    // If the company doesn't exist, create a new one and set the userId
+    if (!company) {
+      company = new Company({ name: companyName, userId: user._id });
+      await company.save();
+    } else {
+      user.company = company._id;
     }
+
+    // Save the user with the company reference
+    user.company = company._id;
     await user.save();
 
     console.log('User registered successfully:', user);
@@ -78,7 +78,23 @@ class AuthService implements IAuthService {
 
     return { message: 'Password reset email sent' };
   }
-  
+
+  async resetPassword(token: string, newPassword: string): Promise<void> {
+    try {
+      const decoded: any = jwt.verify(token, process.env.JWT_SECRET as string);
+      const user = await User.findById(decoded.id);
+      if (!user) {
+        throw new Error('User not found');
+      }
+
+      user.password = await bcrypt.hash(newPassword, 10);
+      await user.save();
+    } catch (error) {
+      throw new Error('Invalid or expired token');
+    }
+  }
+
+
   async delegateAccess(userId: string, delegateId: string, roles: string[]): Promise<any> {
     const user = await User.findById(userId);
     if (!user) {

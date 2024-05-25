@@ -31,6 +31,8 @@ export const emailNotificationActivity = {
       console.log('[DEBUG] Loading email templates');
       let html = fs.readFileSync(path.resolve(__dirname, '../templates/passwordResetEmail.html'), 'utf-8');
       let text = fs.readFileSync(path.resolve(__dirname, '../templates/passwordResetEmail.txt'), 'utf-8');
+      
+      // Replace placeholder with the actual reset link
       html = html.replace('{{resetLink}}', resetLink);
       text = text.replace('{{resetLink}}', resetLink);
 
