@@ -7,14 +7,14 @@ import { getWorkflowClient } from '../clients/temporalClient';
 import { v4 as uuidv4 } from 'uuid';
 
 class AuthService implements IAuthService {
-  async register(email: string, password: string, name: string, companyName: string, phone?: string): Promise<any> {
+  async register(email: string, password: string, name: string, companyName: string, phone?: string, language?: string, country?: string): Promise<any> {
     console.log('Starting registration process...');
     let company = await Company.findOne({ name: companyName });
 
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log('Hashed password:', hashedPassword);  // Log the hashed password
 
-    const user = new User({ email, password: hashedPassword, name, phone });
+    const user = new User({ email, password: hashedPassword, name, phone, language, country });
 
     // If the company doesn't exist, create a new one and set the userId
     if (!company) {
@@ -93,7 +93,6 @@ class AuthService implements IAuthService {
       throw new Error('Invalid or expired token');
     }
   }
-
 
   async delegateAccess(userId: string, delegateId: string, roles: string[]): Promise<any> {
     const user = await User.findById(userId);

@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import TopNav from '../components/TopNav';
 import TopNav2 from '../components/TopNav2';
-import Header from '../components/Header';
+import Header from '../components/header';
 
 
   

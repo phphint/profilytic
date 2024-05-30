@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import GeneralLayout from '../components/AuthLayout';
 import Link from 'next/link';
@@ -8,6 +8,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useRouter } from 'next/router';
 import TermsContent from '../components/TermsContent';
+import countries from '../data/countries.json';
 
 // Set the app element for accessibility
 Modal.setAppElement('#__next');
@@ -21,8 +22,21 @@ const schema = yup.object().shape({
     .oneOf([yup.ref('password'), null], 'Passwords must match')
     .required('Confirm password is required'),
   company: yup.string().required('Company is required'),
+  language: yup.string().required('Language is required'),
+  country: yup.string().required('Country is required'),
   termsAgreed: yup.boolean().oneOf([true], 'You must agree to the terms and conditions')
 });
+
+// Define the language and country options
+const languageOptions = [
+  { value: 'en', label: 'English', countries: ['USA', 'UK', 'Canada', 'Australia', 'New Zealand', 'Ireland', 'Singapore', 'Hong Kong'] },
+  { value: 'es', label: 'Español (Spanish)', countries: ['Spain', 'Mexico', 'Argentina', 'Chile', 'Colombia'] },
+  { value: 'hi', label: 'हिन्दी (Hindi)', countries: ['India'] },
+  { value: 'ja', label: '日本語 (Japanese)', countries: ['Japan'] },
+  { value: 'de', label: 'Deutsch (German)', countries: ['Germany', 'Austria', 'Switzerland'] },
+  { value: 'fr', label: 'Français (French)', countries: ['France', 'Canada', 'Belgium', 'Switzerland'] },
+  { value: 'zh', label: '中文 (Mandarin Chinese)', countries: ['China', 'Singapore', 'Taiwan'] }
+];
 
 export default function Register() {
   const backgroundImageUrl = '/media/auth-bg-opt.png';
@@ -32,11 +46,34 @@ export default function Register() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[0].value);
+  const [countryOptions, setCountryOptions] = useState(languageOptions[0].countries);
+  const [detectedCountry, setDetectedCountry] = useState('');
+
   const router = useRouter();
 
   const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema)
   });
+
+  useEffect(() => {
+    const detectCountry = () => {
+      const userLocale = navigator.language || navigator.userLanguage;
+      const localeParts = userLocale.split('-');
+      const country = localeParts[1] ? localeParts[1].toUpperCase() : 'US';
+      const countryData = countries.find(c => c.code === country);
+      setDetectedCountry(countryData ? countryData.name : 'United States');
+    };
+
+    detectCountry();
+  }, []);
+
+  useEffect(() => {
+    const selectedLang = languageOptions.find(lang => lang.value === selectedLanguage);
+    if (selectedLang) {
+      setCountryOptions(selectedLang.countries);
+    }
+  }, [selectedLanguage]);
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
@@ -154,6 +191,50 @@ export default function Register() {
                 disabled={isSubmitting || isRegistered}
               />
               {errors.company && <p className="text-red-500 text-xs italic">{errors.company.message}</p>}
+            </div>
+
+            {/* Language Field */}
+            <div className="mb-6">
+              <label htmlFor="language" className="block text-white text-sm font-bold mb-2">
+                Language
+              </label>
+              <select
+                id="language"
+                {...register('language')}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
+                onChange={(e) => setSelectedLanguage(e.target.value)}
+              >
+                {languageOptions.map((lang) => (
+                  <option key={lang.value} value={lang.value}>
+                    {lang.label}
+                  </option>
+                ))}
+              </select>
+              {errors.language && <p className="text-red-500 text-xs italic">{errors.language.message}</p>}
+            </div>
+
+            {/* Country Field */}
+            <div className="mb-6">
+              <label htmlFor="country" className="block text-white text-sm font-bold mb-2">
+                Country
+              </label>
+              <select
+                id="country"
+                {...register('country')}
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                style={{ backgroundColor: '#233857', borderColor: '#7f8eab', color: '#7f8eab' }}
+                disabled={isSubmitting || isRegistered}
+                value={detectedCountry}
+              >
+                {countries.map((country) => (
+                  <option key={country.code} value={country.name}>
+                    {country.name}
+                  </option>
+                ))}
+              </select>
+              {errors.country && <p className="text-red-500 text-xs italic">{errors.country.message}</p>}
             </div>
 
             {/* Terms and Conditions */}

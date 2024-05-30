@@ -21,6 +21,8 @@ export interface IUser extends Document {
   smsNumber?: string;
   delegatedAccess: IDelegatedAccess[];
   apiKeys: IApiKey[];
+  language?: string;
+  country?: string;
 }
 
 // Schema definition
@@ -31,6 +33,8 @@ const UserSchema: Schema = new Schema({
   phone: { type: String, required: false },
   company: { type: mongoose.Types.ObjectId, ref: 'Company', required: true },
   smsNumber: { type: String, required: false },
+  language: { type: String, required: false },
+  country: { type: String, required: false },
   delegatedAccess: [
     {
       userId: { type: mongoose.Types.ObjectId, ref: 'User', required: true },
@@ -54,7 +58,6 @@ UserSchema.pre<IUser>('save', async function (next) {
   }
   next();
 });
-
 
 // Interface for the User model
 interface IUserModel extends Model<IUser> {

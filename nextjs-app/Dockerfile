@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Ensure the .npm directory exists and has the right permissions
+#RUN mkdir -p /home/node/.npm && chown -R node:node /home/node/.npm
+
 # Set the environment variable for NODE_ENV
 ARG NODE_ENV
 ENV NODE_ENV $NODE_ENV
@@ -22,6 +25,9 @@ RUN if [ "$NODE_ENV" = "production" ]; then npm run build; fi
 
 # Expose port 3000
 EXPOSE 3000
+
+# Change the user to `node`
+USER node
 
 # Start the application
 CMD ["npm", "run", "dev"]

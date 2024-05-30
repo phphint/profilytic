@@ -75,3 +75,18 @@
   }
 }
 
+@keyframes pulse {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.animated-hr {
+  animation: pulse 9s infinite;
+}

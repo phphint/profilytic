@@ -6,24 +6,11 @@ import session from 'express-session';
 import passport from './config/passport'; // Import Passport configuration
 import { connectToDatabase } from './clients/mongoClient';  // Import the database connection function
 import { createTemporalClient } from './clients/temporalClient';
-import { authMiddleware } from './middleware/authMiddleware'; // Correct import
 import { userController } from './api/userController';
 import { dashboardController } from './api/dashboardController';
 import { companyController } from './api/companyController';
 import { jobController } from './api/jobController';
 import { authController } from './api/authController'; // Import authController
-
-// Uncomment as needed
-// import { candidateController } from './api/candidateController';
-// import { metricsController } from './api/metricsController';
-// import { paymentController } from './api/paymentController';
-// import { tokenController } from './api/tokenController';
-// import { pricingController } from './api/pricingController';
-// import { stripeWebhookController } from './api/stripeWebhookController';
-// import { errorHandlingMiddleware } from './middleware/errorHandlingMiddleware';
-// import { loggingMiddleware } from './middleware/loggingMiddleware';
-// import { tokenValidationMiddleware } from './middleware/tokenValidationMiddleware';
-// import { validateStripeSignatureMiddleware } from './middleware/validateStripeSignatureMiddleware';
 
 dotenv.config({ path: '.env.development' });
 
@@ -32,15 +19,25 @@ const port = process.env.PORT || 3000;
 
 async function startServer() {
   try {
+    console.log('Initializing Temporal client');
     // Initialize Temporal client
     await createTemporalClient();
 
+    console.log('Connecting to database');
     // Connect to the database
     await connectToDatabase();
 
     // Middleware
     app.use(bodyParser.json());
-    app.use(cors());
+
+    // Configure CORS to allow access from anywhere
+    app.use(cors({
+      origin: '*', // Allow access from any origin
+      methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true, // Allow credentials if needed
+    }));
+
     app.use(session({
       secret: process.env.SESSION_SECRET!,
       resave: false,
@@ -54,6 +51,7 @@ async function startServer() {
     // app.use(tokenValidationMiddleware); // Uncomment if needed
     // app.use(validateStripeSignatureMiddleware); // Uncomment if needed
 
+    console.log('Setting up routes');
     // Routes
     app.use('/api/users', userController);
     app.use('/api/dashboard', dashboardController);

@@ -11,6 +11,8 @@ router.post('/register',
   body('password').isLength({ min: 6 }),
   body('name').notEmpty().withMessage('Name is required'),
   body('company').notEmpty().withMessage('Company is required'),
+  body('language').notEmpty().withMessage('Language is required'),
+  body('country').notEmpty().withMessage('Country is required'),
   async (req: Request, res: Response) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -18,8 +20,8 @@ router.post('/register',
     }
 
     try {
-      const { email, password, name, company, phone } = req.body;
-      const user = await authService.register(email, password, name, company, phone);
+      const { email, password, name, company, phone, language, country } = req.body;
+      const user = await authService.register(email, password, name, company, phone, language, country);
 
       // Send welcome email via Temporal asynchronously
       try {
@@ -45,6 +47,7 @@ router.post('/register',
     }
   }
 );
+
 
 router.post('/login',
   body('email').isEmail(),

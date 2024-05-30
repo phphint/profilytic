@@ -1,27 +1,23 @@
-// pages/_app.js or pages/_app.tsx
-import "../styles/globals.css"; // Adjust the path to the actual location of your globals.css
-import "../styles/main.css"; // Adjust the path to the actual location of your globals.css
-import Analytics from '../components/Analytics'; // Adjust the path as necessary
-
-
-// pages/_app.js
+import "../styles/globals.css";
+import "../styles/main.css";
+import Analytics from '../components/Analytics';
 import Head from "next/head";
+import { Provider } from 'react-redux';
+import store from '../dashboard/state/store';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        {/* Common elements like favicon */}
-
-        <link rel="icon" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        {/* You can also include common meta tags here */}
-      </Head>
-      <Analytics />
-
-      <Component {...pageProps} />
-    </>
+    <Provider store={store}>
+      <>
+        <Head>
+          <link rel="icon" sizes="32x32" href="/favicon-32x32.png" />
+          <link rel="icon" sizes="16x16" href="/favicon-16x16.png" />
+          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        </Head>
+        <Analytics />
+        <Component {...pageProps} />
+      </>
+    </Provider>
   );
 }
 
